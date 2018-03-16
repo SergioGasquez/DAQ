@@ -38,6 +38,7 @@ LIBS:Nokia5110
 LIBS:rtc
 LIBS:sdshield
 LIBS:MAX743CWE+
+LIBS:LM4040
 LIBS:DAQ-cache
 EELAYER 25 0
 EELAYER END
@@ -125,30 +126,6 @@ Text Label 1100 1600 2    39   ~ 0
 5V
 Text Label 1100 1650 2    39   ~ 0
 GND
-Wire Wire Line
-	1400 1550 1100 1550
-Wire Wire Line
-	1350 1600 1100 1600
-Wire Wire Line
-	1400 1650 1100 1650
-Wire Wire Line
-	2450 1450 2700 1450
-Wire Wire Line
-	2400 1500 2700 1500
-Wire Wire Line
-	2400 1600 2700 1600
-Wire Wire Line
-	2450 2000 2700 2000
-Wire Wire Line
-	2400 2050 2700 2050
-Wire Wire Line
-	2450 2100 2700 2100
-Wire Wire Line
-	2400 2150 2700 2150
-Wire Wire Line
-	2450 2200 2700 2200
-Wire Wire Line
-	2400 2250 2700 2250
 Text Label 2700 1450 0    39   ~ 0
 SCL
 Text Label 2700 1500 0    39   ~ 0
@@ -211,18 +188,6 @@ Text Label 950  5300 2    39   ~ 0
 5V
 Text Label 950  5400 2    39   ~ 0
 GND
-Wire Wire Line
-	2400 3150 2700 3150
-Wire Wire Line
-	2450 3200 2700 3200
-Wire Wire Line
-	2400 3250 2700 3250
-Wire Wire Line
-	2450 3700 2700 3700
-Wire Wire Line
-	2400 3650 2700 3650
-Wire Wire Line
-	2450 3600 2700 3600
 Text Label 2700 3150 0    39   ~ 0
 PIN31
 Text Label 2700 3200 0    39   ~ 0
@@ -235,12 +200,8 @@ Text Label 2700 3650 0    39   ~ 0
 PIN51
 Text Label 2700 3700 0    39   ~ 0
 PIN52
-Wire Wire Line
-	2400 3750 2700 3750
 Text Label 2700 3750 0    39   ~ 0
 GND
-Wire Wire Line
-	2450 2900 2700 2900
 Text Label 2700 2900 0    39   ~ 0
 5V
 NoConn ~ 1400 1450
@@ -513,7 +474,7 @@ U 1 1 5AA833CA
 P 8050 2500
 F 0 "C2" H 8075 2600 50  0000 L CNN
 F 1 "0.1uF" H 8075 2400 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal" H 8088 2350 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 8088 2350 50  0001 C CNN
 F 3 "" H 8050 2500 50  0001 C CNN
 	1    8050 2500
 	0    -1   -1   0   
@@ -524,7 +485,7 @@ U 1 1 5AA8346C
 P 8000 3050
 F 0 "C4" H 8025 3150 50  0000 L CNN
 F 1 "1uF" H 8025 2950 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal" H 8038 2900 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 8038 2900 50  0001 C CNN
 F 3 "" H 8000 3050 50  0001 C CNN
 	1    8000 3050
 	0    -1   -1   0   
@@ -535,7 +496,7 @@ U 1 1 5AA8349F
 P 8050 2800
 F 0 "C3" H 8075 2900 50  0000 L CNN
 F 1 "10uF" H 8075 2700 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal" H 8088 2650 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 8088 2650 50  0001 C CNN
 F 3 "" H 8050 2800 50  0001 C CNN
 	1    8050 2800
 	0    -1   -1   0   
@@ -546,7 +507,7 @@ U 1 1 5AA834DE
 P 7950 2100
 F 0 "CC+1" H 7975 2200 50  0000 L CNN
 F 1 "0.01uF" H 7975 2000 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal" H 7988 1950 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 7988 1950 50  0001 C CNN
 F 3 "" H 7950 2100 50  0001 C CNN
 	1    7950 2100
 	0    1    1    0   
@@ -568,7 +529,7 @@ U 1 1 5AA83AD3
 P 10600 2600
 F 0 "CF+1" H 10625 2700 50  0000 L CNN
 F 1 "100uF" H 10625 2500 50  0000 L CNN
-F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 10638 2450 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10638 2450 50  0001 C CNN
 F 3 "" H 10600 2600 50  0001 C CNN
 	1    10600 2600
 	1    0    0    -1  
@@ -590,7 +551,7 @@ U 1 1 5AA83C04
 P 10150 2800
 F 0 "C1" H 10175 2900 50  0000 L CNN
 F 1 "100uF" H 10175 2700 50  0000 L CNN
-F 2 "Capacitors_THT:C_Axial_L12.0mm_D6.5mm_P15.00mm_Horizontal" H 10188 2650 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10188 2650 50  0001 C CNN
 F 3 "" H 10150 2800 50  0001 C CNN
 	1    10150 2800
 	1    0    0    -1  
@@ -601,7 +562,7 @@ U 1 1 5AA83E30
 P 10500 3550
 F 0 "CF-1" H 10525 3650 50  0000 L CNN
 F 1 "100uF" H 10525 3450 50  0000 L CNN
-F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 10538 3400 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10538 3400 50  0001 C CNN
 F 3 "" H 10500 3550 50  0001 C CNN
 	1    10500 3550
 	1    0    0    -1  
@@ -645,6 +606,196 @@ F 9 "2.642" H 9450 1700 50  0001 L CNN "Height"
 	1    8300 2300
 	1    0    0    -1  
 $EndComp
+$Comp
+L C CC-1
+U 1 1 5AA99320
+P 8000 3300
+F 0 "CC-1" H 8025 3400 50  0000 L CNN
+F 1 "0.01uF" H 8025 3200 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 8038 3150 50  0001 C CNN
+F 3 "" H 8000 3300 50  0001 C CNN
+	1    8000 3300
+	0    1    1    0   
+$EndComp
+Text Label 7600 1500 0    60   ~ 0
+5V
+Text Label 10950 2400 0    60   ~ 0
++15V
+Text Label 10600 2750 2    60   ~ 0
+GND
+Text Label 9600 2500 0    39   ~ 0
+GND
+Text Label 10150 2950 2    39   ~ 0
+GND
+Text Label 9600 2800 0    39   ~ 0
+GND
+Text Label 10950 3200 0    59   ~ 0
+-15V
+Text Label 9800 3600 0    39   ~ 0
+GND
+Text Label 10500 3700 2    39   ~ 0
+GND
+$Comp
+L LM358 U6
+U 1 1 5AAC0E2F
+P 1400 6100
+F 0 "U6" H 1400 6300 50  0000 L CNN
+F 1 "LM358" H 1400 5900 50  0000 L CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm" H 1400 6100 50  0001 C CNN
+F 3 "" H 1400 6100 50  0001 C CNN
+	1    1400 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM358 U7
+U 1 1 5AAC0F72
+P 4200 6900
+F 0 "U7" H 4200 7100 50  0000 L CNN
+F 1 "LM358" H 4200 6700 50  0000 L CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm" H 4200 6900 50  0001 C CNN
+F 3 "" H 4200 6900 50  0001 C CNN
+	1    4200 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM358 U6
+U 2 1 5AAC10C8
+P 2550 6800
+F 0 "U6" H 2550 7000 50  0000 L CNN
+F 1 "LM358" H 2550 6600 50  0000 L CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm" H 2550 6800 50  0001 C CNN
+F 3 "" H 2550 6800 50  0001 C CNN
+	2    2550 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5AAC11F6
+P 1900 6450
+F 0 "R1" V 1980 6450 50  0000 C CNN
+F 1 "68k" V 1900 6450 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1830 6450 50  0001 C CNN
+F 3 "" H 1900 6450 50  0001 C CNN
+	1    1900 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5AAC1263
+P 1900 6900
+F 0 "R2" V 1980 6900 50  0000 C CNN
+F 1 "18k" V 1900 6900 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1830 6900 50  0001 C CNN
+F 3 "" H 1900 6900 50  0001 C CNN
+	1    1900 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 5AAC12BC
+P 3050 7200
+F 0 "R3" V 3130 7200 50  0000 C CNN
+F 1 "22k" V 3050 7200 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2980 7200 50  0001 C CNN
+F 3 "" H 3050 7200 50  0001 C CNN
+	1    3050 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 5AAC131B
+P 3550 7050
+F 0 "R5" V 3630 7050 50  0000 C CNN
+F 1 "200k" V 3550 7050 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3480 7050 50  0001 C CNN
+F 3 "" H 3550 7050 50  0001 C CNN
+	1    3550 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 5AAC13C5
+P 3100 6800
+F 0 "R4" V 3180 6800 50  0000 C CNN
+F 1 "100k" V 3100 6800 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3030 6800 50  0001 C CNN
+F 3 "" H 3100 6800 50  0001 C CNN
+	1    3100 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L R R6
+U 1 1 5AAC1438
+P 3750 6600
+F 0 "R6" V 3830 6600 50  0000 C CNN
+F 1 "51k" V 3750 6600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3680 6600 50  0001 C CNN
+F 3 "" H 3750 6600 50  0001 C CNN
+	1    3750 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R7
+U 1 1 5AAC14BF
+P 3900 7550
+F 0 "R7" V 3980 7550 50  0000 C CNN
+F 1 "47" V 3900 7550 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3830 7550 50  0001 C CNN
+F 3 "" H 3900 7550 50  0001 C CNN
+	1    3900 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R8
+U 1 1 5AAC153A
+P 4200 7350
+F 0 "R8" V 4280 7350 50  0000 C CNN
+F 1 "100k" V 4200 7350 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4130 7350 50  0001 C CNN
+F 3 "" H 4200 7350 50  0001 C CNN
+	1    4200 7350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1400 1550 1100 1550
+Wire Wire Line
+	1350 1600 1100 1600
+Wire Wire Line
+	1400 1650 1100 1650
+Wire Wire Line
+	2450 1450 2700 1450
+Wire Wire Line
+	2400 1500 2700 1500
+Wire Wire Line
+	2400 1600 2700 1600
+Wire Wire Line
+	2450 2000 2700 2000
+Wire Wire Line
+	2400 2050 2700 2050
+Wire Wire Line
+	2450 2100 2700 2100
+Wire Wire Line
+	2400 2150 2700 2150
+Wire Wire Line
+	2450 2200 2700 2200
+Wire Wire Line
+	2400 2250 2700 2250
+Wire Wire Line
+	2400 3150 2700 3150
+Wire Wire Line
+	2450 3200 2700 3200
+Wire Wire Line
+	2400 3250 2700 3250
+Wire Wire Line
+	2450 3700 2700 3700
+Wire Wire Line
+	2400 3650 2700 3650
+Wire Wire Line
+	2450 3600 2700 3600
+Wire Wire Line
+	2400 3750 2700 3750
+Wire Wire Line
+	2450 2900 2700 2900
 Wire Wire Line
 	8300 2300 8200 2300
 Wire Wire Line
@@ -680,17 +831,6 @@ Wire Wire Line
 Wire Wire Line
 	7800 3050 7850 3050
 Connection ~ 7800 2800
-$Comp
-L C CC-1
-U 1 1 5AA99320
-P 8000 3300
-F 0 "CC-1" H 8025 3400 50  0000 L CNN
-F 1 "0.01uF" H 8025 3200 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal" H 8038 3150 50  0001 C CNN
-F 3 "" H 8000 3300 50  0001 C CNN
-	1    8000 3300
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8300 3000 8300 3300
 Wire Wire Line
@@ -700,8 +840,6 @@ Wire Wire Line
 Connection ~ 7800 3050
 Wire Wire Line
 	7600 2600 7600 1500
-Text Label 7600 1500 0    60   ~ 0
-5V
 Wire Wire Line
 	9800 1800 9800 1950
 Wire Wire Line
@@ -716,29 +854,19 @@ Wire Wire Line
 	10600 2400 10600 2450
 Connection ~ 10350 2400
 Connection ~ 10600 2400
-Text Label 10950 2400 0    60   ~ 0
-+15V
-Text Label 10600 2750 2    60   ~ 0
-GND
 Wire Wire Line
 	9800 2250 9800 2400
 Connection ~ 9800 2400
-Text Label 9600 2500 0    39   ~ 0
-GND
 Wire Wire Line
 	9600 2600 10150 2600
 Wire Wire Line
 	9700 2700 9600 2700
 Wire Wire Line
 	10150 2600 10150 2650
-Text Label 10150 2950 2    39   ~ 0
-GND
 Wire Wire Line
 	9700 1800 9700 2700
 Connection ~ 9700 2600
 Connection ~ 9700 1800
-Text Label 9600 2800 0    39   ~ 0
-GND
 Wire Wire Line
 	9600 2900 9800 2900
 Wire Wire Line
@@ -748,8 +876,6 @@ Wire Wire Line
 Connection ~ 9800 3200
 Wire Wire Line
 	10300 3200 10950 3200
-Text Label 10950 3200 0    59   ~ 0
--15V
 Wire Wire Line
 	9600 3000 9600 3400
 Wire Wire Line
@@ -757,11 +883,152 @@ Wire Wire Line
 Wire Wire Line
 	10500 3400 10500 3200
 Connection ~ 10500 3200
-Text Label 9800 3600 0    39   ~ 0
-GND
-Text Label 10500 3700 2    39   ~ 0
-GND
 Wire Wire Line
 	7600 1800 9800 1800
 Connection ~ 7600 1800
+Wire Wire Line
+	1100 6000 750  6000
+Wire Wire Line
+	1100 6200 900  6200
+Wire Wire Line
+	900  6200 900  6600
+Wire Wire Line
+	900  6600 1700 6600
+Wire Wire Line
+	1700 6600 1700 6100
+Wire Wire Line
+	1900 6300 1900 6100
+Wire Wire Line
+	1900 6100 1700 6100
+Wire Wire Line
+	1900 6600 1900 6750
+Wire Wire Line
+	2250 6700 1900 6700
+Connection ~ 1900 6700
+Wire Wire Line
+	2250 6900 2100 6900
+Wire Wire Line
+	2100 6900 2100 7200
+Wire Wire Line
+	2100 7200 2850 7200
+Wire Wire Line
+	2850 7200 2850 6800
+Wire Wire Line
+	2850 6800 2950 6800
+Wire Wire Line
+	3250 6800 3900 6800
+Wire Wire Line
+	3550 6800 3550 6900
+Wire Wire Line
+	3750 6800 3750 6750
+Connection ~ 3550 6800
+Connection ~ 3750 6800
+Wire Wire Line
+	3900 7000 3900 7400
+Wire Wire Line
+	4050 7350 3900 7350
+Connection ~ 3900 7350
+Wire Wire Line
+	4350 7350 4500 7350
+Wire Wire Line
+	4500 7350 4500 6900
+Wire Wire Line
+	3050 7350 3550 7350
+Wire Wire Line
+	3550 7350 3550 7200
+Text Label 3050 7050 0    39   ~ 0
+15V
+Text Label 2450 6500 0    39   ~ 0
+15V
+Text Label 4100 6600 0    39   ~ 0
+15V
+Text Label 2450 7100 0    39   ~ 0
+-15V
+Text Label 4100 7200 0    39   ~ 0
+-15V
+Text Label 1300 5800 0    39   ~ 0
+15V
+Text Label 1300 6400 0    39   ~ 0
+-15V
+Text Label 1900 7050 0    39   ~ 0
+GND
+Text Label 3750 6450 0    39   ~ 0
+GND
+Text Label 3900 7700 0    39   ~ 0
+GND
+$Comp
+L LM4040 D1
+U 1 1 5AAC2E8A
+P 3050 7550
+F 0 "D1" H 3100 7600 40  0000 C CNN
+F 1 "LM4040" H 3050 7450 40  0000 C CNN
+F 2 "" H 3050 7550 60  0001 C CNN
+F 3 "" H 3050 7550 60  0000 C CNN
+	1    3050 7550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3050 7450 3050 7350
+Text Label 3050 7600 2    39   ~ 0
+GND
+$Comp
+L C C6
+U 1 1 5AAC34D7
+P 3200 5950
+F 0 "C6" H 3225 6050 50  0000 L CNN
+F 1 "C" H 3225 5850 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 3238 5800 50  0001 C CNN
+F 3 "" H 3200 5950 50  0001 C CNN
+	1    3200 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 5AAC3548
+P 2800 5750
+F 0 "C5" H 2825 5850 50  0000 L CNN
+F 1 "C" H 2825 5650 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 2838 5600 50  0001 C CNN
+F 3 "" H 2800 5750 50  0001 C CNN
+	1    2800 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C7
+U 1 1 5AAC35B9
+P 3800 5850
+F 0 "C7" H 3825 5950 50  0000 L CNN
+F 1 "C" H 3825 5750 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 3838 5700 50  0001 C CNN
+F 3 "" H 3800 5850 50  0001 C CNN
+	1    3800 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C8
+U 1 1 5AAC3738
+P 4150 5950
+F 0 "C8" H 4175 6050 50  0000 L CNN
+F 1 "C" H 4175 5850 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 4188 5800 50  0001 C CNN
+F 3 "" H 4150 5950 50  0001 C CNN
+	1    4150 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM358 U7
+U 2 1 5AAC3CAA
+P 5250 7000
+F 0 "U7" H 5250 7200 50  0000 L CNN
+F 1 "LM358" H 5250 6800 50  0000 L CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm" H 5250 7000 50  0001 C CNN
+F 3 "" H 5250 7000 50  0001 C CNN
+	2    5250 7000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4950 6900
+NoConn ~ 4950 7100
+NoConn ~ 5150 7300
+NoConn ~ 5150 6700
+NoConn ~ 5550 7000
 $EndSCHEMATC
