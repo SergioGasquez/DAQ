@@ -18,7 +18,8 @@ MyRealTimeClock myRTC(31, 33, 35); // Assign Digital Pins    CLK-->31 DAT-->33 R
 
 // LCD
 #include <LCD5110_Graph.h>
-LCD5110 myGLCD(7, 6, 5, 2, 3); // myGLCD(CLK,DIN,DC,RST,CE)
+//LCD5110 myGLCD(7, 6, 5, 2, 3); // myGLCD(CLK,DIN,DC,RST,CE)
+LCD5110 myGLCD(2, 3, 5, 6, 7); // myGLCD(CLK,DIN,DC,RST,CE)
 
 // Global Voltage
 float voltage = 0.0;        // Initialize Voltage

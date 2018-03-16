@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX743CWE+
+D Maxim MAX743CWE+, Dual DC-DC Converter
+K
+F https://datasheets.maximintegrated.com/en/ds/MAX743.pdf
+$ENDCMP
+#
+#End Doc Library

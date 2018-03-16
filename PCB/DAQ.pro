@@ -1,4 +1,4 @@
-update=11/03/2018 20:42:14
+update=14/03/2018 21:20:59
 version=1
 last_client=kicad
 [pcbnew]
@@ -67,3 +67,4 @@ LibName35=Libraries/DAC/dac
 LibName36=Libraries/Nokia5110/Nokia5110
 LibName37=Libraries/RTC/rtc
 LibName38=Libraries/SDShield/sdshield
+LibName39=Libraries/MAX743/MAX743CWE+
