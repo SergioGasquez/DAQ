@@ -274,7 +274,6 @@ NoConn ~ 3450 3200
 NoConn ~ 3450 3400
 NoConn ~ 3450 3300
 NoConn ~ 3450 3500
-NoConn ~ 4150 3700
 NoConn ~ 3000 4550
 NoConn ~ 3000 4650
 $Comp
@@ -756,6 +755,95 @@ F 3 "" H 4200 7350 50  0001 C CNN
 	1    4200 7350
 	0    1    1    0   
 $EndComp
+Text Label 3050 7050 0    39   ~ 0
+15V
+Text Label 1300 5800 0    39   ~ 0
+15V
+Text Label 1300 6400 0    39   ~ 0
+-15V
+Text Label 1900 7050 0    39   ~ 0
+GND
+Text Label 3750 6450 0    39   ~ 0
+GND
+Text Label 3900 7700 0    39   ~ 0
+GND
+$Comp
+L LM4040 D1
+U 1 1 5AAC2E8A
+P 3050 7550
+F 0 "D1" H 3100 7600 40  0000 C CNN
+F 1 "LM4040" H 3050 7450 40  0000 C CNN
+F 2 "TH-R:R-C-L-D" H 3050 7550 60  0001 C CNN
+F 3 "" H 3050 7550 60  0000 C CNN
+	1    3050 7550
+	0    -1   -1   0   
+$EndComp
+Text Label 3050 7600 2    39   ~ 0
+GND
+$Comp
+L C C6
+U 1 1 5AAC34D7
+P 2450 7550
+F 0 "C6" H 2475 7650 50  0000 L CNN
+F 1 "100nF" H 2475 7450 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 2488 7400 50  0001 C CNN
+F 3 "" H 2450 7550 50  0001 C CNN
+	1    2450 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 5AAC3548
+P 2600 6300
+F 0 "C5" H 2625 6400 50  0000 L CNN
+F 1 "100nF" H 2625 6200 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 2638 6150 50  0001 C CNN
+F 3 "" H 2600 6300 50  0001 C CNN
+	1    2600 6300
+	0    1    1    0   
+$EndComp
+$Comp
+L C C7
+U 1 1 5AAC35B9
+P 4250 7600
+F 0 "C7" H 4275 7700 50  0000 L CNN
+F 1 "100nF" H 4275 7500 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 4288 7450 50  0001 C CNN
+F 3 "" H 4250 7600 50  0001 C CNN
+	1    4250 7600
+	0    1    1    0   
+$EndComp
+$Comp
+L C C8
+U 1 1 5AAC3738
+P 4250 6300
+F 0 "C8" H 4275 6400 50  0000 L CNN
+F 1 "100nF" H 4275 6200 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 4288 6150 50  0001 C CNN
+F 3 "" H 4250 6300 50  0001 C CNN
+	1    4250 6300
+	0    1    1    0   
+$EndComp
+$Comp
+L LM358 U7
+U 2 1 5AAC3CAA
+P 5250 7000
+F 0 "U7" H 5250 7200 50  0000 L CNN
+F 1 "LM358" H 5250 6800 50  0000 L CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm" H 5250 7000 50  0001 C CNN
+F 3 "" H 5250 7000 50  0001 C CNN
+	2    5250 7000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4950 6900
+NoConn ~ 4950 7100
+NoConn ~ 5150 7300
+NoConn ~ 5150 6700
+NoConn ~ 5550 7000
+Text Label 2450 6150 0    39   ~ 0
+15V
+Text Label 2750 6300 0    39   ~ 0
+GND
 Wire Wire Line
 	1400 1550 1100 1550
 Wire Wire Line
@@ -936,99 +1024,33 @@ Wire Wire Line
 	3050 7350 3550 7350
 Wire Wire Line
 	3550 7350 3550 7200
-Text Label 3050 7050 0    39   ~ 0
-15V
-Text Label 2450 6500 0    39   ~ 0
-15V
-Text Label 4100 6600 0    39   ~ 0
-15V
-Text Label 2450 7100 0    39   ~ 0
--15V
-Text Label 4100 7200 0    39   ~ 0
--15V
-Text Label 1300 5800 0    39   ~ 0
-15V
-Text Label 1300 6400 0    39   ~ 0
--15V
-Text Label 1900 7050 0    39   ~ 0
-GND
-Text Label 3750 6450 0    39   ~ 0
-GND
-Text Label 3900 7700 0    39   ~ 0
-GND
-$Comp
-L LM4040 D1
-U 1 1 5AAC2E8A
-P 3050 7550
-F 0 "D1" H 3100 7600 40  0000 C CNN
-F 1 "LM4040" H 3050 7450 40  0000 C CNN
-F 2 "" H 3050 7550 60  0001 C CNN
-F 3 "" H 3050 7550 60  0000 C CNN
-	1    3050 7550
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	3050 7450 3050 7350
-Text Label 3050 7600 2    39   ~ 0
+Wire Wire Line
+	2450 6150 2450 6500
+Connection ~ 2450 6300
+Wire Wire Line
+	2450 7100 2450 7400
+Wire Wire Line
+	4100 7200 4100 7700
+Wire Wire Line
+	4100 6200 4100 6600
+Connection ~ 4100 6300
+Connection ~ 4100 7600
+Wire Wire Line
+	2450 7350 2550 7350
+Connection ~ 2450 7350
+Text Label 4100 6200 0    39   ~ 0
+15V
+Text Label 4400 6300 0    39   ~ 0
 GND
-$Comp
-L C C6
-U 1 1 5AAC34D7
-P 3200 5950
-F 0 "C6" H 3225 6050 50  0000 L CNN
-F 1 "C" H 3225 5850 50  0000 L CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 3238 5800 50  0001 C CNN
-F 3 "" H 3200 5950 50  0001 C CNN
-	1    3200 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C5
-U 1 1 5AAC3548
-P 2800 5750
-F 0 "C5" H 2825 5850 50  0000 L CNN
-F 1 "C" H 2825 5650 50  0000 L CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 2838 5600 50  0001 C CNN
-F 3 "" H 2800 5750 50  0001 C CNN
-	1    2800 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C7
-U 1 1 5AAC35B9
-P 3800 5850
-F 0 "C7" H 3825 5950 50  0000 L CNN
-F 1 "C" H 3825 5750 50  0000 L CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 3838 5700 50  0001 C CNN
-F 3 "" H 3800 5850 50  0001 C CNN
-	1    3800 5850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C8
-U 1 1 5AAC3738
-P 4150 5950
-F 0 "C8" H 4175 6050 50  0000 L CNN
-F 1 "C" H 4175 5850 50  0000 L CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 4188 5800 50  0001 C CNN
-F 3 "" H 4150 5950 50  0001 C CNN
-	1    4150 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L LM358 U7
-U 2 1 5AAC3CAA
-P 5250 7000
-F 0 "U7" H 5250 7200 50  0000 L CNN
-F 1 "LM358" H 5250 6800 50  0000 L CNN
-F 2 "Housings_DIP:DIP-8_W7.62mm" H 5250 7000 50  0001 C CNN
-F 3 "" H 5250 7000 50  0001 C CNN
-	2    5250 7000
-	1    0    0    -1  
-$EndComp
-NoConn ~ 4950 6900
-NoConn ~ 4950 7100
-NoConn ~ 5150 7300
-NoConn ~ 5150 6700
-NoConn ~ 5550 7000
+Text Label 4400 7600 0    39   ~ 0
+GND
+Text Label 2450 7700 0    39   ~ 0
+GND
+Text Label 2550 7350 0    39   ~ 0
+-15V
+Text Label 4100 7700 0    39   ~ 0
+-15V
+NoConn ~ 3450 3600
 $EndSCHEMATC
