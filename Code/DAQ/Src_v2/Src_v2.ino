@@ -22,8 +22,10 @@ RTC_DS3231 rtc;
 
 // LCD
 #include <LCD5110_Graph.h>
+
 //LCD5110 myGLCD(7, 6, 5, 2, 3); // myGLCD(CLK,DIN,DC,RST,CE)
-LCD5110 myGLCD(2, 3, 5, 6, 7); // myGLCD(CLK,DIN,DC,RST,CE)
+//LCD5110 myGLCD(2, 3, 5, 6, 7); // myGLCD(CLK,DIN,DC,RST,CE)
+LCD5110 myGLCD(7,6,5,3,2); // myGLCD(CLK,DIN,DC,RST,CE)
 
 // Global Voltage
 float voltage = 0.0;      
@@ -56,23 +58,28 @@ void setup()
     ; // wait for serial port to connect. Needed for native USB port only
   }
   initSD();
+  delay(500);
 
 
   initRTC();
+    delay(500);
 
   dac.begin(0x62); // Default address for MCP4725A1
+  delay(500);
   #ifdef DEBUGGING
     Serial.println("DAC Initialized at default address 0x62");
   #endif // 
   ads.begin();    // Initalice the adc
+  delay(500);
   #ifdef DEBUGGING
     Serial.println("ADC Initialized");
   #endif // 
+  
 
   // LCD Init
   myGLCD.InitLCD();
   myGLCD.setFont(SmallFont);
-  randomSeed(analogRead(2));
+  randomSeed(analogRead(7));
   
   autonomousMode = 0; // By default we are in USB Mode
 
@@ -152,20 +159,20 @@ void readSD()
 }
 void updateModeLCD()
 {
-  if (autonomousMode == 1)
+  if (autonomousMode==1)
   {
     myGLCD.clrScr();
-    myGLCD.drawLine(0, 9, 84, 9);
+    myGLCD.drawLine(0,9,84,9);
     myGLCD.setFont(TinyFont);
-    myGLCD.print("Autonomous Mode", 12, 2);
+    myGLCD.print("Autonomous Mode",12,2);
     myGLCD.update();
   }
   else
   {
     myGLCD.clrScr();
-    myGLCD.drawLine(0, 8, 84, 8);
+    myGLCD.drawLine(0,8,84,8);
     myGLCD.setFont(TinyFont);
-    myGLCD.print("USB Mode", 25, 2);
+    myGLCD.print("USB Mode",25,2);
     myGLCD.update();
   }
 }
@@ -184,34 +191,35 @@ void getTime()
   
 }
 
-void updateLCD(int dayRTC, int monthRTC, int yearRTC, int hoursRTC, int minutesRTC, int secondsRTC, int ADCVal, float voltage)
+void updateLCD(int dayRTC,int monthRTC,int yearRTC,int hoursRTC,int minutesRTC,int secondsRTC,int ADCVal,float voltage)
 {
   myGLCD.clrScr();
   updateModeLCD();
   myGLCD.setFont(SmallFont);
   // DATE
-  myGLCD.print("Date:", 0, 12);
-  myGLCD.printNumI(dayRTC, 30, 12);
-  myGLCD.print("/", 43, 12);
-  myGLCD.printNumI(monthRTC, 49, 12);
-  myGLCD.print("/", 62, 12);
-  myGLCD.printNumI(yearRTC, 68, 12);
+  myGLCD.print("Date:",0,12);
+  myGLCD.printNumI(dayRTC,30,12);
+  myGLCD.print("/",43,12);
+  myGLCD.printNumI(monthRTC,49,12);
+  myGLCD.print("/",62,12);
+  myGLCD.printNumI(yearRTC,68,12);
   // TIME
-  myGLCD.print("Time:", 0, 21);
-  myGLCD.printNumI(hoursRTC, 30, 21);
-  myGLCD.print(":", 43, 21);
-  myGLCD.printNumI(minutesRTC, 49, 21);
-  myGLCD.print(":", 62, 21);
-  myGLCD.printNumI(secondsRTC, 68, 21);
+  myGLCD.print("Time:",0,21);
+  myGLCD.printNumI(hoursRTC,30,21);
+  myGLCD.print(":",43,21);
+  myGLCD.printNumI(minutesRTC,49,21);
+  myGLCD.print(":",62,21);
+  myGLCD.printNumI(secondsRTC,68,21);
   // ADC Value
-  myGLCD.print("ADCValue:", 0, 30);
-  myGLCD.printNumI(ADCVal, 53, 30);
-  myGLCD.print("Voltage:", 0, 39);
-  myGLCD.printNumF(voltage, 4, 47, 39);
-
-  myGLCD.update();
-
+  myGLCD.print("ADCValue:",0,30);
+  myGLCD.printNumI(ADCVal,57,30);
+  myGLCD.print("Voltage:",0,39);
+  myGLCD.printNumF(voltage,4,47,39);
+  
+  myGLCD.update();  
+  
 }
+
 
 void loop()
 {
@@ -233,6 +241,6 @@ void loop()
     delay(1000);
   }
 
-  readSD();
+  //readSD();
 
 }

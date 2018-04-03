@@ -18,8 +18,8 @@
 //      VCC - 3.3 volt arduino
 //      BL - 5 volt arduino
 //      GND- ground of arduino
-//
-#include <LCD5110_Graph.h>
+// 
+#include<LCD5110_Graph.h>
 
 LCD5110 myGLCD(7,6,5,3,2); // myGLCD(CLK,DIN,DC,RST,CE)
 
