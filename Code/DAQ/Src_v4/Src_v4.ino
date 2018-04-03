@@ -19,7 +19,7 @@ RTC_DS3231 rtc;
 
 // LCD
 #include<LCD5110_Graph.h>
-LCD5110 myGLCD(7, 6, 5, 2, 3); // myGLCD(CLK,DIN,DC,RST,CE)
+LCD5110 myGLCD(7, 6, 5, 3, 4); // myGLCD(CLK,DIN,DC,RST,CE)
 
 // Global Voltage
 float voltage = 0.0;  // Initialize Voltage

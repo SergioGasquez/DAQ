@@ -99,17 +99,6 @@ F 3 "" H 3200 4700 39  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L RTC U2
-U 1 1 5AA588BA
-P 1750 4300
-F 0 "U2" H 1750 4000 39  0000 C CNN
-F 1 "RTC" H 1750 4600 39  0000 C CNN
-F 2 "RTC:SDShield" H 1750 4300 39  0001 C CNN
-F 3 "" H 1750 4300 39  0001 C CNN
-	1    1750 4300
-	1    0    0    -1  
-$EndComp
-$Comp
 L SDshield U1
 U 1 1 5AA5890F
 P 1700 5000
@@ -142,8 +131,6 @@ Text Label 2700 2150 0    39   ~ 0
 PIN4
 Text Label 2700 2200 0    39   ~ 0
 PIN3
-Text Label 2700 2250 0    39   ~ 0
-PIN2
 Text Label 3600 1950 2    39   ~ 0
 GND
 Text Label 3600 1850 2    39   ~ 0
@@ -166,18 +153,6 @@ Text Label 3000 4350 2    39   ~ 0
 SCL
 Text Label 3000 4450 2    39   ~ 0
 SDA
-Text Label 1150 4100 2    39   ~ 0
-5V
-Text Label 1150 4200 2    39   ~ 0
-GND
-Text Label 1150 4300 2    39   ~ 0
-PIN31
-Text Label 1150 4400 2    39   ~ 0
-PIN33
-Text Label 1150 4500 2    39   ~ 0
-PIN35
-Text Label 950  4900 2    39   ~ 0
-PIN4
 Text Label 950  5000 2    39   ~ 0
 PIN52
 Text Label 950  5100 2    39   ~ 0
@@ -194,14 +169,6 @@ Text Label 2700 3200 0    39   ~ 0
 PIN33
 Text Label 2700 3250 0    39   ~ 0
 PIN35
-Text Label 2700 3600 0    39   ~ 0
-PIN50
-Text Label 2700 3650 0    39   ~ 0
-PIN51
-Text Label 2700 3700 0    39   ~ 0
-PIN52
-Text Label 2700 3750 0    39   ~ 0
-GND
 Text Label 2700 2900 0    39   ~ 0
 5V
 NoConn ~ 1400 1450
@@ -239,8 +206,6 @@ NoConn ~ 1350 3400
 NoConn ~ 1400 3450
 NoConn ~ 1350 3500
 NoConn ~ 1400 3550
-NoConn ~ 1350 3600
-NoConn ~ 1400 3650
 NoConn ~ 1350 3700
 NoConn ~ 2400 3550
 NoConn ~ 2450 3500
@@ -274,7 +239,6 @@ NoConn ~ 3450 3200
 NoConn ~ 3450 3400
 NoConn ~ 3450 3300
 NoConn ~ 3450 3500
-NoConn ~ 4150 3700
 NoConn ~ 3000 4550
 NoConn ~ 3000 4650
 $Comp
@@ -458,16 +422,6 @@ Text Label 6700 5300 3    39   ~ 0
 PIN50
 NoConn ~ 7000 5300
 NoConn ~ 7200 5300
-Text Label 3600 1450 2    39   ~ 0
-PIN5
-Text Label 3600 1350 2    39   ~ 0
-PIN6
-Text Label 3600 1250 2    39   ~ 0
-PIN7
-Text Label 3600 1550 2    39   ~ 0
-PIN3
-Text Label 3600 1650 2    39   ~ 0
-PIN2
 $Comp
 L C C2
 U 1 1 5AA833CA
@@ -774,7 +728,7 @@ U 1 1 5AAC2E8A
 P 3050 7550
 F 0 "D1" H 3100 7600 40  0000 C CNN
 F 1 "LM4040" H 3050 7450 40  0000 C CNN
-F 2 "" H 3050 7550 60  0001 C CNN
+F 2 "TH-R:R-C-L-D" H 3050 7550 60  0001 C CNN
 F 3 "" H 3050 7550 60  0000 C CNN
 	1    3050 7550
 	0    -1   -1   0   
@@ -845,6 +799,32 @@ Text Label 2450 6150 0    39   ~ 0
 15V
 Text Label 2750 6300 0    39   ~ 0
 GND
+Text Label 4100 6200 0    39   ~ 0
+15V
+Text Label 4400 6300 0    39   ~ 0
+GND
+Text Label 4400 7600 0    39   ~ 0
+GND
+Text Label 2450 7700 0    39   ~ 0
+GND
+Text Label 2550 7350 0    39   ~ 0
+-15V
+Text Label 4100 7700 0    39   ~ 0
+-15V
+NoConn ~ 3450 3600
+Text Label 3600 1250 2    39   ~ 0
+PIN3
+Text Label 3600 1350 2    39   ~ 0
+PIN4
+Text Label 3600 1450 2    39   ~ 0
+PIN5
+Text Label 3600 1550 2    39   ~ 0
+PIN6
+Text Label 3600 1650 2    39   ~ 0
+PIN7
+Text Label 950  4900 2    39   ~ 0
+PIN53
+NoConn ~ 2450 3600
 Wire Wire Line
 	1400 1550 1100 1550
 Wire Wire Line
@@ -868,21 +848,11 @@ Wire Wire Line
 Wire Wire Line
 	2450 2200 2700 2200
 Wire Wire Line
-	2400 2250 2700 2250
-Wire Wire Line
 	2400 3150 2700 3150
 Wire Wire Line
 	2450 3200 2700 3200
 Wire Wire Line
 	2400 3250 2700 3250
-Wire Wire Line
-	2450 3700 2700 3700
-Wire Wire Line
-	2400 3650 2700 3650
-Wire Wire Line
-	2450 3600 2700 3600
-Wire Wire Line
-	2400 3750 2700 3750
 Wire Wire Line
 	2450 2900 2700 2900
 Wire Wire Line
@@ -1041,16 +1011,40 @@ Connection ~ 4100 7600
 Wire Wire Line
 	2450 7350 2550 7350
 Connection ~ 2450 7350
-Text Label 4100 6200 0    39   ~ 0
-15V
-Text Label 4400 6300 0    39   ~ 0
+Wire Wire Line
+	2400 3650 2700 3650
+Wire Wire Line
+	2450 3700 2700 3700
+Text Label 2700 3650 0    39   ~ 0
+PIN51
+Text Label 2700 3700 0    39   ~ 0
+PIN53
+NoConn ~ 2400 3750
+Wire Wire Line
+	1350 3600 1100 3600
+Wire Wire Line
+	1400 3650 1100 3650
+Text Label 1100 3650 2    39   ~ 0
+PIN52
+Text Label 1100 3600 2    39   ~ 0
+PIN50
+$Comp
+L RTC U?
+U 1 1 5AC4074A
+P 1750 4350
+F 0 "U?" H 1750 4050 39  0000 C CNN
+F 1 "RTC" H 1750 4650 39  0000 C CNN
+F 2 "" H 1750 4350 39  0001 C CNN
+F 3 "" H 1750 4350 39  0001 C CNN
+	1    1750 4350
+	1    0    0    -1  
+$EndComp
+Text Label 1150 4150 2    39   ~ 0
 GND
-Text Label 4400 7600 0    39   ~ 0
-GND
-Text Label 2450 7700 0    39   ~ 0
-GND
-Text Label 2550 7350 0    39   ~ 0
--15V
-Text Label 4100 7700 0    39   ~ 0
--15V
+Text Label 1150 4250 2    39   ~ 0
+5V
+Text Label 1150 4350 2    39   ~ 0
+SDA
+Text Label 1150 4450 2    39   ~ 0
+SCL
 $EndSCHEMATC
