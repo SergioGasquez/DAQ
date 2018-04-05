@@ -1,0 +1,9 @@
+AT+CPIN=0439
+
+
+AT+CSTT="happymovil","internetmas",""
+
+
+AT+CSTT?
+
+AT+CIICR
