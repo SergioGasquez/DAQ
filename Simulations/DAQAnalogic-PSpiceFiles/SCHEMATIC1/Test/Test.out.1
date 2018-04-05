@@ -1,0 +1,54 @@
+
+**** 04/05/18 19:31:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\sergi\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V6 0 5 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DAQANALOGIC
+V_V4         N01178 GND 15Vdc
+V_V1         N01532 GND 5Vdc
+V_V3         N01344 GND -15Vdc
+R_R1         N01532 N01204  100k TC=0,0 
+X_U2B         N01204 N01300 N01178 N01344 N01286 LM358
+R_R2         N01204 GND  50k TC=0,0 
+R_R5         GND N01300  47k TC=0,0 
+R_R3         N013200 N01204  200k TC=0,0 
+R_R4         N01300 N01286  100k TC=0,0 
+V_V2         N013200 GND -5Vdc
+R_R7         N02575 VO  50k TC=0,0 
+V_V8         N02583 GND -15Vdc
+V_V7         N02515 GND 15Vdc
+X_U3B         N01286 N02575 N02515 N02583 VO LM358
+R_R6         GND N02575  10k TC=0,0 
+
+**** RESUMING Test.cir ****
+.END
+
+ERROR(ORPSIM-15090): DC device V6 is undefined
+

@@ -1,0 +1,7 @@
+* source AMPLIFIER
+X_U2B         N01850 N01868 N01772 N01912 VO LM358
+R_R4         N01868 VO  50k TC=0,0 
+V_V3         N01912 GND -15Vdc
+V_V1         N01850 GND 5Vdc
+V_V4         N01772 GND 15Vdc
+R_R5         GND N01868  10k TC=0,0 

@@ -3,6 +3,12 @@ AT+CPIN=0439
 
 AT+CSTT="happymovil","internetmas",""
 
+AT+CMEE=2
+Errors
+
+
+AT+CFUN=1	
+Funtionalities 
 
 AT+CSTT?
 
