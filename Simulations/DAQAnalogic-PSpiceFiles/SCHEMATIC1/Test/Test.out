@@ -1,5 +1,5 @@
 
-**** 04/06/18 15:51:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/06/18 20:26:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
@@ -53,7 +53,7 @@ V_V10         N03218 GND -15Vdc
 **** RESUMING Test.cir ****
 .END
 
-**** 04/06/18 15:51:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/06/18 20:26:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
@@ -99,7 +99,7 @@ V_V10         N03218 GND -15Vdc
          CJO   10.000000E-12 
 
 
-**** 04/06/18 15:51:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/06/18 20:26:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
@@ -187,7 +187,7 @@ V_V10         N03218 GND -15Vdc
            D     .52         
 
 
-**** 04/06/18 15:51:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/06/18 20:26:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
@@ -287,7 +287,7 @@ V_V10         N03218 GND -15Vdc
 
           JOB CONCLUDED
 
-**** 04/06/18 15:51:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/06/18 20:26:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
