@@ -22,3 +22,6 @@ Also, the MAX743 is used to power all the OP Amps in his typical configuration.T
 And the PCB looks like:
 
 ![PCB](https://i.imgur.com/TT7nWcF.png "PCB")
+
+
+Remember that the project is still under development. Any suggestion or improvement is welcome!
