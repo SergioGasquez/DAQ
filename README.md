@@ -4,7 +4,7 @@ The general diagram of the DAQ could be simplified as:
 
 ![Diagram](https://i.imgur.com/YlzAUQy.png "Diagram")
 
-Collected data will be avaliable in an open dashboard of [Losant](https://www.losant.com/)
+Collected data will be avaliable in an open dashboard of [Losant](https://www.losant.com/) (An amazing IoT platform!)
 
 Where the DAC Analog part is:
 
