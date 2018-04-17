@@ -774,22 +774,6 @@ F 3 "" H 4250 6300 50  0001 C CNN
 	1    4250 6300
 	0    1    1    0   
 $EndComp
-$Comp
-L LM358 U7
-U 2 1 5AAC3CAA
-P 5250 7000
-F 0 "U7" H 5250 7200 50  0000 L CNN
-F 1 "LM358" H 5250 6800 50  0000 L CNN
-F 2 "Housings_DIP:DIP-8_W7.62mm" H 5250 7000 50  0001 C CNN
-F 3 "" H 5250 7000 50  0001 C CNN
-	2    5250 7000
-	1    0    0    -1  
-$EndComp
-NoConn ~ 4950 6900
-NoConn ~ 4950 7100
-NoConn ~ 5150 7300
-NoConn ~ 5150 6700
-NoConn ~ 5550 7000
 Text Label 2450 6150 0    39   ~ 0
 15V
 Text Label 2750 6300 0    39   ~ 0
@@ -1115,7 +1099,7 @@ F 1 "LM358" H 8700 5450 50  0000 L CNN
 F 2 "Housings_DIP:DIP-8_W7.62mm" H 8700 5650 50  0001 C CNN
 F 3 "" H 8700 5650 50  0001 C CNN
 	1    8700 5650
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L LM358 U9
@@ -1232,7 +1216,7 @@ L R R17
 U 1 1 5ACD0D00
 P 10250 5800
 F 0 "R17" V 10330 5800 50  0000 C CNN
-F 1 "50K" V 10250 5800 50  0000 C CNN
+F 1 "10K" V 10250 5800 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10180 5800 50  0001 C CNN
 F 3 "" H 10250 5800 50  0001 C CNN
 	1    10250 5800
@@ -1267,10 +1251,6 @@ Wire Wire Line
 Wire Wire Line
 	8200 5750 8200 6250
 Wire Wire Line
-	8200 6250 9000 6250
-Wire Wire Line
-	9000 6250 9000 5150
-Wire Wire Line
 	8300 5400 8300 5150
 Wire Wire Line
 	8300 5150 8350 5150
@@ -1302,10 +1282,6 @@ Wire Wire Line
 	8800 4900 8600 4900
 Text Label 9250 4400 0    39   ~ 0
 GND
-Text Label 8600 5350 0    39   ~ 0
-+15V
-Text Label 8600 5950 0    39   ~ 0
--15V
 Text Label 9700 4700 0    39   ~ 0
 +15V
 Text Label 9700 5300 0    39   ~ 0
@@ -1345,4 +1321,12 @@ Text Label 10250 5950 0    39   ~ 0
 GND
 Text Label 11100 5150 0    39   ~ 0
 Vo
+Text Label 8600 5350 0    60   ~ 0
+-15V
+Text Label 8600 5950 0    60   ~ 0
++15V
+Wire Wire Line
+	9000 5650 9000 5150
+Text Label 8200 6250 0    39   ~ 0
+GND
 $EndSCHEMATC
