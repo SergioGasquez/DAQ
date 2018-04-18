@@ -73,9 +73,9 @@ void loop()
 {
   uint32_t counter;
   uint32_t dacVal;
-  for (counter = 0; counter < 40; counter++)  // Ramp
+  for (counter = 0; counter < 20; counter++)  // Ramp
   {
-    dacVal = counter * 100;
+    dacVal = counter * 205;
     dac.setVoltage(dacVal, false);             // We set the voltage at the counter value
 
     ADCVal = ads.readADC_SingleEnded(0); // We read from the adc and normalize the voltage

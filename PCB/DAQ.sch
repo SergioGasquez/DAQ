@@ -77,17 +77,6 @@ F 3 "" H 4050 1500 39  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L ADC U3
-U 1 1 5AA58804
-P 3650 3600
-F 0 "U3" H 4050 3050 60  0000 C CNN
-F 1 "ADC" H 4250 3050 60  0000 C CNN
-F 2 "ADC:ADC" H 5000 3500 60  0001 C CNN
-F 3 "" H 5000 3500 60  0001 C CNN
-	1    3650 3600
-	0    -1   -1   0   
-$EndComp
-$Comp
 L DAC U5
 U 1 1 5AA5881F
 P 3200 4700
@@ -234,7 +223,6 @@ NoConn ~ 2450 1650
 NoConn ~ 2450 1550
 NoConn ~ 3450 3100
 NoConn ~ 3450 3200
-NoConn ~ 3450 3400
 NoConn ~ 3450 3300
 NoConn ~ 3450 3500
 NoConn ~ 3000 4550
@@ -688,7 +676,7 @@ L R R7
 U 1 1 5AAC14BF
 P 3900 7550
 F 0 "R7" V 3980 7550 50  0000 C CNN
-F 1 "47" V 3900 7550 50  0000 C CNN
+F 1 "47k" V 3900 7550 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3830 7550 50  0001 C CNN
 F 3 "" H 3900 7550 50  0001 C CNN
 	1    3900 7550
@@ -706,9 +694,9 @@ F 3 "" H 4200 7350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 3050 7050 0    39   ~ 0
-15V
++15V
 Text Label 1300 5800 0    39   ~ 0
-15V
++15V
 Text Label 1300 6400 0    39   ~ 0
 -15V
 Text Label 1900 7050 0    39   ~ 0
@@ -775,11 +763,11 @@ F 3 "" H 4250 6300 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 2450 6150 0    39   ~ 0
-15V
++15V
 Text Label 2750 6300 0    39   ~ 0
 GND
 Text Label 4100 6200 0    39   ~ 0
-15V
++15V
 Text Label 4400 6300 0    39   ~ 0
 GND
 Text Label 4400 7600 0    39   ~ 0
@@ -1039,58 +1027,6 @@ SCL
 Text Label 6900 4150 2    39   ~ 0
 SDA
 $Comp
-L Conn_01x01 J11
-U 1 1 5AC6A77C
-P 4450 4600
-F 0 "J11" H 4450 4700 50  0000 C CNN
-F 1 "Conn_01x01" H 4450 4500 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 4450 4600 50  0001 C CNN
-F 3 "" H 4450 4600 50  0001 C CNN
-	1    4450 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 J12
-U 1 1 5AC6A7F5
-P 4450 4900
-F 0 "J12" H 4450 5000 50  0000 C CNN
-F 1 "Conn_01x01" H 4450 4800 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 4450 4900 50  0001 C CNN
-F 3 "" H 4450 4900 50  0001 C CNN
-	1    4450 4900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 J9
-U 1 1 5AC6A961
-P 3800 4900
-F 0 "J9" H 3800 5000 50  0000 C CNN
-F 1 "Conn_01x01" H 3800 4800 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 3800 4900 50  0001 C CNN
-F 3 "" H 3800 4900 50  0001 C CNN
-	1    3800 4900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 J10
-U 1 1 5AC6A967
-P 3800 5200
-F 0 "J10" H 3800 5300 50  0000 C CNN
-F 1 "Conn_01x01" H 3800 5100 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 3800 5200 50  0001 C CNN
-F 3 "" H 3800 5200 50  0001 C CNN
-	1    3800 5200
-	1    0    0    -1  
-$EndComp
-Text Label 3600 4900 2    39   ~ 0
-PIN50
-Text Label 4250 4600 2    39   ~ 0
-PIN50
-Text Label 4250 4900 2    39   ~ 0
-PIN52
-Text Label 3600 5200 2    39   ~ 0
-PIN52
-$Comp
 L LM358 U8
 U 1 1 5ACCFE80
 P 8700 5650
@@ -1319,8 +1255,6 @@ Wire Wire Line
 	11050 5150 11100 5150
 Text Label 10250 5950 0    39   ~ 0
 GND
-Text Label 11100 5150 0    39   ~ 0
-Vo
 Text Label 8600 5350 0    60   ~ 0
 -15V
 Text Label 8600 5950 0    60   ~ 0
@@ -1329,4 +1263,54 @@ Wire Wire Line
 	9000 5650 9000 5150
 Text Label 8200 6250 0    39   ~ 0
 GND
+Wire Wire Line
+	4500 6900 4750 6900
+Text Label 4750 6900 0    60   ~ 0
+VinADC
+$Comp
+L ADC U3
+U 1 1 5AA58804
+P 3650 3600
+F 0 "U3" H 4050 3050 60  0000 C CNN
+F 1 "ADC" H 4250 3050 60  0000 C CNN
+F 2 "ADC:ADC" H 5000 3500 60  0001 C CNN
+F 3 "" H 5000 3500 60  0001 C CNN
+	1    3650 3600
+	0    -1   -1   0   
+$EndComp
+Text Label 3450 3400 2    39   ~ 0
+VinADC
+$Comp
+L R R19
+U 1 1 5AD7CDA2
+P 9000 3900
+F 0 "R19" V 9080 3900 50  0000 C CNN
+F 1 "270k" V 9000 3900 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8930 3900 50  0001 C CNN
+F 3 "" H 9000 3900 50  0001 C CNN
+	1    9000 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L C C9
+U 1 1 5AD7CE41
+P 9350 4050
+F 0 "C9" H 9375 4150 50  0000 L CNN
+F 1 "100nF" H 9375 3950 50  0000 L CNN
+F 2 "Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 9388 3900 50  0001 C CNN
+F 3 "" H 9350 4050 50  0001 C CNN
+	1    9350 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 3900 9500 3900
+Text Label 11100 5150 0    39   ~ 0
+VoDAC1
+Text Label 8850 3900 2    39   ~ 0
+VoDAC1
+Text Label 9350 4200 2    39   ~ 0
+GND
+Connection ~ 9350 3900
+Text Label 9500 3900 0    39   ~ 0
+VoDAC
 $EndSCHEMATC
