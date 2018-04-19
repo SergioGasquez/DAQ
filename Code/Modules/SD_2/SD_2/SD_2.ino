@@ -6,7 +6,7 @@
 #include <SD.h>
 #include <SPI.h>
 File myFile;
-int pinCS = 53; // Pin 10 on Arduino Uno
+int pinCS = 10; // Pin 10 on Arduino Uno
 void setup() {
     
   Serial.begin(9600);
