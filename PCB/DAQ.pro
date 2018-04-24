@@ -1,4 +1,4 @@
-update=16/03/2018 19:44:47
+update=4/24/2018 4:28:27 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -69,3 +69,4 @@ LibName37=Libraries/RTC/rtc
 LibName38=Libraries/SDShield/sdshield
 LibName39=Libraries/MAX743/MAX743CWE+
 LibName40=Libraries/LM4040/LM4040
+LibName41=Libraries/ADG408/ADG408
