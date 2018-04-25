@@ -9,7 +9,7 @@
 #ifdef ADC
 #define ADC_A0
 //#define ADC_A1
-//#define ADC_A2
+#define ADC_A2
 //#define ADC_A3
 #endif // ADC
 
@@ -24,10 +24,16 @@
 int pinCS = 53; // Pin 10 on Arduino Uno
 #endif //microSD
 
+
 // ADC
 #ifdef ADC
 #include <Adafruit_ADS1015.h>
 Adafruit_ADS1115 ads(0x48); // ADC 0x48 is the default address
+byte onADC_A0 = 0;
+byte onADC_A1 = 0;
+byte onADC_A2 = 0;
+byte onADC_A3 = 0;
+byte channelsOn;
 #endif //ADC
 
 // DAC
@@ -131,6 +137,23 @@ void setup()
   setChannel(1);
 #endif // MULTIPLEXER
 
+#ifdef ADC_A0
+onADC_A0 = 1;
+#endif //ADC_A0
+#ifdef ADC_A1
+  onADC_A1=2;
+#endif //ADC_A1
+#ifdef ADC_A2
+  onADC_A2=4;
+#endif //ADC_A2
+#ifdef ADC_A3
+  onADC_A3=8;
+#endif //ADC_A3
+channelsOn=onADC_A0+onADC_A1+onADC_A2+onADC_A3;
+#if DEBUGGING
+Serial.print("Channels on");Serial.println(channelsOn);
+#endif //DEBUGGING
+
   flash();
 }
 
@@ -172,7 +195,7 @@ void loop()
     Serial.print("\t valADC_A0: "); Serial.print(valADC_A0);
     voltage = (valADC_A0 * 0.1875) / 1000;
     Serial.print("\t voltage: "); Serial.println(voltage);
-    
+
     getTime();
 
     updateLCD();
