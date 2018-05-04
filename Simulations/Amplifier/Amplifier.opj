@@ -31,8 +31,18 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier\amplifier.dsn")
+      (Path "Design Resources"
+         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier\amplifier.dsn"
+         "SCHEMATIC1")
+      (Path "Design Resources"
+         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier\amplifier.dsn"
+         "Design Cache")
       (Path "Outputs")
-      (Select "Design Resources"))
+      (Select "Design Resources"
+         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier\amplifier.dsn"
+         "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -42,12 +52,19 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 1 0 639 -8 -31 52 1394 52 511")
-        (Scroll "-421 0")
+        (Placement "44 0 1 0 639 -8 -31 52 1394 52 511")
+        (Scroll "-162 0")
         (Zoom "100")
         (Occurrence "/"))
       (Path
          "C:\USERS\SERGI\DOCUMENTS\GITHUB\DAQ\SIMULATIONS\AMPLIFIER\AMPLIFIER.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+      (Page "PAGE1"))
+    (Doc
+      (Type "TextFile")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 78 1714 78 537"))
+      (Path
+         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier\Amplifier-PSpiceFiles\SCHEMATIC1\SCHEMATIC1.net")
+      (Scroll "0")))
   (MPSSessionName "sergi"))

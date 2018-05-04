@@ -182,30 +182,35 @@ void loop()
 {
   uint32_t counter;
   uint32_t dacVal;
-  for (counter = 0; counter < 20; counter++)  // Ramp
-  {
-    Serial.print(counter);
-    dacVal = counter * 205;
-    Serial.print(" \tDAC: "); Serial.print(dacVal);
-    dac.setVoltage(dacVal, false);             // We set the voltage at the counter value
+  float volt;
+//  for (counter = 0; counter < 10; counter++)  // Ramp
+//  {
+//    Serial.print(counter);
+//    dacVal = counter * 205;
+//    Serial.print(" \tDAC: "); Serial.print(dacVal);
+//    dac.setVoltage(dacVal, false);             // We set the voltage at the counter value
+//
+//
+//
+//    valADC_A0 = ads.readADC_SingleEnded(0); // We read from the adc and normalize the voltage
+//    Serial.print("\t valADC_A0: "); Serial.print(valADC_A0);
+//    voltage = (valADC_A0 * 0.1875) / 1000;
+//    Serial.print("\t voltage: "); Serial.println(voltage);
+//
+//    getTime();
+//
+//    updateLCD();
+//    saveToSD();
+//    //delay(1000);
+//
+//    waitForKey();
+//  }
 
-
-
-    valADC_A0 = ads.readADC_SingleEnded(0); // We read from the adc and normalize the voltage
-    Serial.print("\t valADC_A0: "); Serial.print(valADC_A0);
-    voltage = (valADC_A0 * 0.1875) / 1000;
-    Serial.print("\t voltage: "); Serial.println(voltage);
-
-    getTime();
-
-    updateLCD();
-    saveToSD();
-    //delay(1000);
-
-    waitForKey();
-
-
-  }
+  dac.setVoltage(1700, false);
+  volt=analogRead(A0);
+    Serial.print("volt");Serial.println(volt);
+  Serial.print("volt");Serial.println(volt*5/1024);
+  waitForKey();
 
 
 

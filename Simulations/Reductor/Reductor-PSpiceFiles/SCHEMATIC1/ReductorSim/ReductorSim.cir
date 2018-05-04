@@ -1,6 +1,6 @@
-** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\ReductorSim.sim ] 
 
-** Creating circuit file "Test.cir" 
+** Creating circuit file "ReductorSim.cir" 
 ** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
 
 *Libraries: 
@@ -10,7 +10,7 @@
 .lib "nomd.lib" 
 
 *Analysis directives: 
-.DC LIN V_V1 0 5 0.01 
+.DC LIN V_V1 -15 15 0.01 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 

@@ -1448,4 +1448,12 @@ Text Label 5900 5300 3    39   ~ 0
 m_A1
 Text Label 6100 5300 3    39   ~ 0
 m_A2
+Text Label 10000 4500 0    39   ~ 0
+GND
+Text Label 10950 4650 0    39   ~ 0
+GND
+Text Label 10950 5550 0    39   ~ 0
+GND
+Text Label 10050 5550 0    39   ~ 0
+GND
 $EndSCHEMATC

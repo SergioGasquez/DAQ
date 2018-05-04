@@ -1,7 +1,7 @@
+
+**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
-
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
 
 
  ****     CIRCUIT DESCRIPTION
@@ -12,7 +12,7 @@
 
 
 
-** Creating circuit file "Test.cir" 
+** Creating circuit file "ReductorSim.cir" 
 ** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
 
 *Libraries: 
@@ -22,7 +22,7 @@
 .lib "nomd.lib" 
 
 *Analysis directives: 
-.DC LIN V_V1 0 5 0.01 
+.DC LIN V_V1 -15 15 0.01 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -30,34 +30,32 @@
 
 
 **** INCLUDING SCHEMATIC1.net ****
-* source DAQANALOGIC
-V_V4         N01178 GND 15Vdc
-V_V1         N03079 GND 5Vdc
-V_V3         N01344 GND -15Vdc
-R_R1         N03079 N01204  100k TC=0,0 
-X_U2B         N01204 N01300 N01178 N01344 N01286 LM358
-R_R2         N01204 GND  50k TC=0,0 
-R_R5         GND N01300  47k TC=0,0 
-R_R3         VAS N01204  200k TC=0,0 
-R_R4         N01300 N01286  100k TC=0,0 
-R_R7         N02575 VO  50k TC=0,0 
-V_V8         N02583 GND -15Vdc
-V_V7         N02515 GND 15Vdc
-X_U3B         N01286 N02575 N02515 N02583 VO LM358
-R_R6         GND N02575  10k TC=0,0 
-V_V10         N04221 GND 15Vdc
-X_U4A         GND N04760 N04221 N04177 VAS LM358
-V_V9         N04177 GND -15Vdc
-V_V2         N04203 GND 5Vdc
-R_R8         N04203 N04760  10k TC=0,0 
-R_R9         N04760 VAS  10k TC=0,0 
+* source REDUCTOR
+V_V4         N14447 0 15Vdc
+V_V3         N14515 0 -15Vdc
+X_U2B         N15432 N14507 N14447 N14515 VO LM358
+R_R4         N14507 VO  100k TC=0,0 
+R_R5         0 N14507  47k TC=0,0 
+X_U3B         N14974 N14956 N14931 N146973 N14956 LM358
+X_U4B         N15065 N15321 N15265 N15283 N15321 LM358
+R_R6         N15065 N14956  68k TC=0,0 
+R_R7         0 N15065  18k TC=0,0 
+V_V5         N14931 0 15Vdc
+V_V6         N146973 0 -15Vdc
+V_V7         N15283 0 -15Vdc
+V_V8         N15265 0 15Vdc
+V_V1         N14974 0 5Vdc
+V_V9         N16502 0 5Vdc
+R_R8         N15321 N15432  100k TC=0,0 
+R_R9         N15432 0  51k TC=0,0 
+R_R10         N16502 N15432  200k TC=0,0 
 
-**** RESUMING Test.cir ****
+**** RESUMING ReductorSim.cir ****
 .END
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
 
 
  ****     Diode MODEL PARAMETERS
@@ -90,20 +88,20 @@ R_R9         N04760 VAS  10k TC=0,0
          CJO   10.000000E-12 
 
 
-               X_U4A.x_lm358.dx 
+               X_U4B.x_lm358.dx 
           IS  800.000000E-18 
           RS    1            
 
 
-               X_U4A.x_lm358.dy 
+               X_U4B.x_lm358.dy 
           IS  800.000000E-18 
           RS    1.000000E-03 
          CJO   10.000000E-12 
 
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
 
 
  ****     BJT MODEL PARAMETERS
@@ -164,7 +162,7 @@ R_R9         N04760 VAS  10k TC=0,0
            D     .52         
 
 
-               X_U4A.x_lm358.qx 
+               X_U4B.x_lm358.qx 
                PNP             
        LEVEL    1            
           IS  800.000000E-18 
@@ -189,9 +187,9 @@ R_R9         N04760 VAS  10k TC=0,0
            D     .52         
 
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
 
 
  ****     Current Controlled Switch MODEL PARAMETERS
@@ -258,28 +256,28 @@ R_R9         N04760 VAS  10k TC=0,0
         IOFF   -1.000000E-06 
 
 
-               X_U4A.x_lm358.sw2 
+               X_U4B.x_lm358.sw2 
          RON    1            
         ROFF   10.000000E+06 
          ION    0            
         IOFF   -1.000000E-06 
 
 
-               X_U4A.x_lm358.sw1 
+               X_U4B.x_lm358.sw1 
          RON    1            
         ROFF   10.000000E+06 
          ION   -1.000000E-06 
         IOFF    0            
 
 
-               X_U4A.x_lm358.sw3 
+               X_U4B.x_lm358.sw3 
          RON    1            
         ROFF   10.000000E+06 
          ION   -1.000000E-06 
         IOFF    0            
 
 
-               X_U4A.x_lm358.sw4 
+               X_U4B.x_lm358.sw4 
          RON    1            
         ROFF   10.000000E+06 
          ION    0            
@@ -289,9 +287,9 @@ R_R9         N04760 VAS  10k TC=0,0
 
           JOB CONCLUDED
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
 
 
  ****     JOB STATISTICS SUMMARY
@@ -301,5 +299,5 @@ R_R9         N04760 VAS  10k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .08
+  Total job time (using Solver 1)   =         .20
 

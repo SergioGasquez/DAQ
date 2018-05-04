@@ -59,8 +59,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 0 635 -8 -31 5 1613 -12 651")
-        (Scroll "0 135")
-        (Zoom "194")
+        (Scroll "0 77")
+        (Zoom "158")
         (Occurrence "/"))
       (Path "C:\USERS\SERGI\DOCUMENTS\GITHUB\DAQ\SIMULATIONS\DAQANALOGIC.DSN")
       (Schematic "SCHEMATIC1")
