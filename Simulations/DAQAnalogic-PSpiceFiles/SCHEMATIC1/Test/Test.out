@@ -1,7 +1,7 @@
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/14/18 15:59:56 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -43,7 +43,7 @@ R_R4         N01300 N01286  100k TC=0,0
 R_R7         N02575 VO  50k TC=0,0 
 V_V8         N02583 GND -15Vdc
 V_V7         N02515 GND 15Vdc
-X_U3B         N01286 N02575 N02515 N02583 VO LM358
+X_U3B         N05274 N02575 N02515 N02583 VO LM358
 R_R6         GND N02575  10k TC=0,0 
 V_V10         N04221 GND 15Vdc
 X_U4A         GND N04760 N04221 N04177 VAS LM358
@@ -51,13 +51,16 @@ V_V9         N04177 GND -15Vdc
 V_V2         N04203 GND 5Vdc
 R_R8         N04203 N04760  10k TC=0,0 
 R_R9         N04760 VAS  10k TC=0,0 
+R_R10         N01286 N05274  270k TC=0,0 
+C_C1         GND N05274  100n  TC=0,0 
+C_C2         GND N01204  100n  TC=0,0 
 
 **** RESUMING Test.cir ****
 .END
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/14/18 15:59:56 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
 
  ****     Diode MODEL PARAMETERS
@@ -101,9 +104,9 @@ R_R9         N04760 VAS  10k TC=0,0
          CJO   10.000000E-12 
 
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/14/18 15:59:56 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
 
  ****     BJT MODEL PARAMETERS
@@ -189,9 +192,9 @@ R_R9         N04760 VAS  10k TC=0,0
            D     .52         
 
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/14/18 15:59:56 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
 
  ****     Current Controlled Switch MODEL PARAMETERS
@@ -289,9 +292,9 @@ R_R9         N04760 VAS  10k TC=0,0
 
           JOB CONCLUDED
 
-**** 04/28/18 16:46:29 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/14/18 15:59:56 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-Test"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
+ ** Profile: "SCHEMATIC1-Test"  [ c:\users\sergi\documents\github\daq\simulations\daqanalogic-pspicefiles\schematic1\test.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY
@@ -301,5 +304,5 @@ R_R9         N04760 VAS  10k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .08
+  Total job time (using Solver 1)   =         .11
 

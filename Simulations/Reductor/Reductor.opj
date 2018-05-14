@@ -88,15 +88,7 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\reductor.dsn")
-      (Path "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\reductor.dsn"
-         "SCHEMATIC1")
-      (Path "Outputs")
-      (Select "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\reductor.dsn"
-         "SCHEMATIC1" "PAGE1"))
+      (Path "Outputs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -106,8 +98,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 130 1766 130 589")
-        (Scroll "-119 96")
+        (Placement "44 0 1 -1 -1 -8 -31 75 1711 68 527")
+        (Scroll "-119 75")
         (Zoom "139")
         (Occurrence "/"))
       (Path

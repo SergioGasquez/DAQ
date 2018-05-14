@@ -1,7 +1,7 @@
-
-**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
+**** 05/07/18 19:38:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
 
  ****     CIRCUIT DESCRIPTION
@@ -53,9 +53,9 @@ R_R10         N16502 N15432  200k TC=0,0
 **** RESUMING ReductorSim.cir ****
 .END
 
-**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/07/18 19:38:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
 
  ****     Diode MODEL PARAMETERS
@@ -99,9 +99,9 @@ R_R10         N16502 N15432  200k TC=0,0
          CJO   10.000000E-12 
 
 
-**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/07/18 19:38:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
 
  ****     BJT MODEL PARAMETERS
@@ -187,9 +187,9 @@ R_R10         N16502 N15432  200k TC=0,0
            D     .52         
 
 
-**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/07/18 19:38:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
 
  ****     Current Controlled Switch MODEL PARAMETERS
@@ -287,9 +287,9 @@ R_R10         N16502 N15432  200k TC=0,0
 
           JOB CONCLUDED
 
-**** 04/28/18 15:56:48 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/07/18 19:38:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-ReductorSim"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Reductor\Reductor-PSpiceFiles\SCHEMATIC1\Red
+ ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
 
  ****     JOB STATISTICS SUMMARY
@@ -299,5 +299,5 @@ R_R10         N16502 N15432  200k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .20
+  Total job time (using Solver 1)   =         .23
 

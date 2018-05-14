@@ -1,0 +1,16 @@
+.ALIASES
+X_U1A           U1A(+=N00467 -=N00431 V+=N00461 V-=N00455 OUT=VX ) CN @SMU.SCHEMATIC1(sch_1):INS32@OPAMP.LM358.Normal(chips)
+X_U1B           U1B(+=VX -=N00474 V+=N00496 V-=VO OUT=VO ) CN @SMU.SCHEMATIC1(sch_1):INS100@OPAMP.LM358.Normal(chips)
+V_V4            V4(+=N00467 -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS150@SOURCE.VDC.Normal(chips)
+V_V2            V2(+=N00461 -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS166@SOURCE.VDC.Normal(chips)
+V_V3            V3(+=VO -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS182@SOURCE.VDC.Normal(chips)
+V_V1            V1(+=N00424 -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS198@SOURCE.VDC.Normal(chips)
+V_V5            V5(+=N00455 -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS214@SOURCE.VDC.Normal(chips)
+V_V6            V6(+=N00496 -=0 ) CN @SMU.SCHEMATIC1(sch_1):INS230@SOURCE.VDC.Normal(chips)
+R_R1            R1(1=N00431 2=VX ) CN @SMU.SCHEMATIC1(sch_1):INS340@ANALOG.R.Normal(chips)
+R_R2            R2(1=N00424 2=N00431 ) CN @SMU.SCHEMATIC1(sch_1):INS356@ANALOG.R.Normal(chips)
+R_R3            R3(1=N00474 2=VO ) CN @SMU.SCHEMATIC1(sch_1):INS372@ANALOG.R.Normal(chips)
+R_R4            R4(1=0 2=N00474 ) CN @SMU.SCHEMATIC1(sch_1):INS388@ANALOG.R.Normal(chips)
+_    _(Vo=VO)
+_    _(Vx=VX)
+.ENDALIASES
