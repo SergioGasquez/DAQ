@@ -88,7 +88,8 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -98,8 +99,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 75 1711 68 527")
-        (Scroll "-119 75")
+        (Placement "44 2 3 -1 -1 -8 -31 55 1691 -13 446")
+        (Scroll "-231 89")
         (Zoom "139")
         (Occurrence "/"))
       (Path

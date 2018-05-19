@@ -83,15 +83,8 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier2\amplifierhpf.dsn")
-      (Path "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier2\amplifierhpf.dsn"
-         "SCHEMATIC1")
       (Path "Outputs")
-      (Select "Design Resources"
-         "C:\Users\sergi\Documents\GitHub\DAQ\Simulations\Amplifier2\amplifierhpf.dsn"
-         "SCHEMATIC1" "PAGE1"))
+      (Select "Design Resources"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")

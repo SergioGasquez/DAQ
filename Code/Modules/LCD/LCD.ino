@@ -6,12 +6,19 @@ LCD5110 myGLCD(7, 6, 5, 3, 4); // myGLCD(CLK,DIN,DC,RST,CE)
 // Declaracíon de los tipos de letra
 extern uint8_t SmallFont[];
 extern unsigned char TinyFont[];
+  int dayRTC,monthRTC,yearRTC,hoursRTC,minutesRTC,secondsRTC,ADCVal,voltage;
 
+
+
+void setup()
+{
+  Serial.begin(9600);
+}
 
 void updateLCD()
 {
   myGLCD.clrScr();
-  updateModeLCD();
+  //updateModeLCD();
   myGLCD.setFont(SmallFont);
   // DATE
   myGLCD.print("Date:", 0, 12);
@@ -29,7 +36,7 @@ void updateLCD()
   myGLCD.printNumI(secondsRTC, 68, 21);
   // ADC Value
   myGLCD.print("ADCValue:", 0, 30);
-  myGLCD.printNumI(valADC_A0, 53, 30);
+  myGLCD.printNumI(ADCVal, 53, 30);
   myGLCD.print("Voltage:", 0, 39);
   myGLCD.printNumF(voltage, 4, 47, 39);
 
@@ -40,8 +47,7 @@ void updateLCD()
 void loop()
 {
 
-  
-  updateLCD(dayRTC,monthRTC,yearRTC,hoursRTC,minutesRTC,secondsRTC,ADCVal,voltage);
+  //updateLCD(dayRTC,monthRTC,yearRTC,hoursRTC,minutesRTC,secondsRTC,ADCVal,voltage);
   delay (2000);
   dayRTC= 2;
   monthRTC=1;
@@ -53,7 +59,7 @@ void loop()
   voltage=4.982;
 
   
-  updateLCD(dayRTC,monthRTC,yearRTC,hoursRTC,minutesRTC,secondsRTC,ADCVal,voltage);
+  updateLCD();
   delay (2000);
 
 

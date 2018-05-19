@@ -4,6 +4,7 @@
 #define ADC
 #define DAC
 #define MULTIPLEXER
+#define MULTIPLEXER2
 #define DEBUGGING true
 
 #ifdef ADC

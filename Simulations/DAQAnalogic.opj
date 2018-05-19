@@ -52,6 +52,11 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
+      (Path "Design Resources"
+         "c:\users\sergi\documents\github\daq\simulations\daqanalogic.dsn")
+      (Path "Design Resources"
+         "c:\users\sergi\documents\github\daq\simulations\daqanalogic.dsn"
+         "SCHEMATIC1")
       (Path "Outputs")
       (Select "Design Resources"))
     (HierarchyView)
@@ -63,8 +68,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 0 635 -8 -31 5 1613 -12 651")
-        (Scroll "-139 73")
+        (Placement "44 0 1 0 635 -8 -31 5 1613 -12 651")
+        (Scroll "-13 185")
         (Zoom "158")
         (Occurrence "/"))
       (Path "C:\USERS\SERGI\DOCUMENTS\GITHUB\DAQ\SIMULATIONS\DAQANALOGIC.DSN")

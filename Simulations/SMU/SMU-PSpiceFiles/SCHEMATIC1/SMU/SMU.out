@@ -1,7 +1,7 @@
-
-**** 05/09/18 16:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\SMU-PSpiceFiles\SCHEMATIC1\SMU.sim ] 
+**** 05/17/18 19:17:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\smu-pspicefiles\schematic1\smu.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -47,9 +47,9 @@ R_R4         0 N00474  10k TC=0,0
 **** RESUMING SMU.cir ****
 .END
 
-**** 05/09/18 16:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/17/18 19:17:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\SMU-PSpiceFiles\SCHEMATIC1\SMU.sim ] 
+ ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\smu-pspicefiles\schematic1\smu.sim ] 
 
 
  ****     Diode MODEL PARAMETERS
@@ -82,9 +82,9 @@ R_R4         0 N00474  10k TC=0,0
          CJO   10.000000E-12 
 
 
-**** 05/09/18 16:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/17/18 19:17:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\SMU-PSpiceFiles\SCHEMATIC1\SMU.sim ] 
+ ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\smu-pspicefiles\schematic1\smu.sim ] 
 
 
  ****     BJT MODEL PARAMETERS
@@ -145,9 +145,9 @@ R_R4         0 N00474  10k TC=0,0
            D     .52         
 
 
-**** 05/09/18 16:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/17/18 19:17:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\SMU-PSpiceFiles\SCHEMATIC1\SMU.sim ] 
+ ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\smu-pspicefiles\schematic1\smu.sim ] 
 
 
  ****     Current Controlled Switch MODEL PARAMETERS
@@ -217,9 +217,9 @@ R_R4         0 N00474  10k TC=0,0
 
           JOB CONCLUDED
 
-**** 05/09/18 16:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 05/17/18 19:17:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\SMU-PSpiceFiles\SCHEMATIC1\SMU.sim ] 
+ ** Profile: "SCHEMATIC1-SMU"  [ C:\Users\sergi\Documents\GitHub\DAQ\Simulations\SMU\smu-pspicefiles\schematic1\smu.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY
@@ -229,5 +229,5 @@ R_R4         0 N00474  10k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .13
+  Total job time (using Solver 1)   =         .14
 
