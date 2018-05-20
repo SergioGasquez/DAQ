@@ -458,7 +458,7 @@ D1
 Text Label 9300 800  0    39   ~ 0
 PIN41
 Text Label 9300 900  0    39   ~ 0
-PIN43.
+PIN43
 Text Label 9300 1000 0    39   ~ 0
 GND
 Text Label 9300 1100 0    39   ~ 0
@@ -1532,39 +1532,21 @@ Wire Wire Line
 $Comp
 L C C19
 U 1 1 5B011864
-P 10050 4750
-F 0 "C19" H 10075 4850 50  0000 L CNN
-F 1 "100nF" V 9900 4750 50  0000 L CNN
-F 2 "Cap:Cap" H 10088 4600 50  0001 C CNN
-F 3 "" H 10050 4750 50  0001 C CNN
-	1    10050 4750
-	0    1    1    0   
+P 10050 5550
+F 0 "C19" H 10075 5650 50  0000 L CNN
+F 1 "100nF" V 9900 5550 50  0000 L CNN
+F 2 "Cap:Cap" H 10088 5400 50  0001 C CNN
+F 3 "" H 10050 5550 50  0001 C CNN
+	1    10050 5550
+	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	9900 4700 9900 4850
-Connection ~ 9900 4750
-Text Label 9900 4700 2    39   ~ 0
--15V
-Text Label 10200 4750 0    39   ~ 0
+	9900 5600 9900 5450
+Connection ~ 9900 5550
+Text Label 10200 5550 0    39   ~ 0
 GND
-$Comp
-L C C20
-U 1 1 5B011F3F
-P 10050 5500
-F 0 "C20" H 10075 5600 50  0000 L CNN
-F 1 "100nF" V 10200 5450 50  0000 L CNN
-F 2 "Cap:Cap" H 10088 5350 50  0001 C CNN
-F 3 "" H 10050 5500 50  0001 C CNN
-	1    10050 5500
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	9900 5450 9900 5550
-Connection ~ 9900 5500
-Text Label 9900 5550 2    39   ~ 0
-+15V
-Text Label 10200 5500 0    39   ~ 0
-GND
+	9900 4850 9900 4750
 $Comp
 L R R23
 U 1 1 5B011F98
@@ -1700,4 +1682,8 @@ F 3 "" H 7650 5350 50  0001 C CNN
 	1    7650 5350
 	1    0    0    -1  
 $EndComp
+Text Label 9900 4750 0    39   ~ 0
+GND
+Text Label 9900 5600 2    39   ~ 0
+5V
 $EndSCHEMATC
