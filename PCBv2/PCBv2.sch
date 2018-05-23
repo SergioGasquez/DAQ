@@ -80,8 +80,6 @@ Text Label 2500 900  0    39   ~ 0
 SCL
 Text Label 2500 950  0    39   ~ 0
 SDA
-Text Label 2500 1450 0    39   ~ 0
-PIN7
 Text Label 2500 1500 0    39   ~ 0
 PIN6
 Text Label 2500 1550 0    39   ~ 0
@@ -130,7 +128,6 @@ NoConn ~ 2200 1950
 NoConn ~ 2250 1900
 NoConn ~ 2200 1800
 NoConn ~ 2250 1750
-NoConn ~ 2200 1700
 NoConn ~ 2200 1350
 NoConn ~ 2250 1300
 NoConn ~ 2200 1250
@@ -319,7 +316,6 @@ F 3 "" H 3250 1950 50  0001 C CNN
 $EndComp
 NoConn ~ 3050 2350
 NoConn ~ 3050 2250
-NoConn ~ 3050 2150
 Text Label 3050 2050 2    39   ~ 0
 PIN3
 Text Label 3050 1950 2    39   ~ 0
@@ -328,8 +324,6 @@ Text Label 3050 1850 2    39   ~ 0
 PIN5
 Text Label 3050 1750 2    39   ~ 0
 PIN6
-Text Label 3050 1650 2    39   ~ 0
-PIN7
 Text Label 3450 600  2    39   ~ 0
 SCL
 Text Label 3450 700  2    39   ~ 0
@@ -371,15 +365,15 @@ F 3 "" H 6700 1350 39  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text Label 6250 1100 2    39   ~ 0
-PIN3
+PIN2
 Text Label 6250 1200 2    39   ~ 0
-PIN4
+PIN3
 Text Label 6250 1300 2    39   ~ 0
-PIN5
+PIN4
 Text Label 6250 1400 2    39   ~ 0
-PIN6
+PIN5
 Text Label 6250 1500 2    39   ~ 0
-PIN7
+PIN6
 Text Label 6250 1600 2    39   ~ 0
 3.3V
 Text Label 6250 1700 2    39   ~ 0
@@ -739,8 +733,6 @@ Wire Wire Line
 	2250 900  2500 900 
 Wire Wire Line
 	2200 950  2500 950 
-Wire Wire Line
-	2250 1450 2500 1450
 Wire Wire Line
 	2200 1500 2500 1500
 Wire Wire Line
@@ -1688,4 +1680,12 @@ Text Label 9900 5600 2    39   ~ 0
 5V
 Text Label 9150 5500 0    39   ~ 0
 5V
+Wire Wire Line
+	2200 1700 2500 1700
+Text Label 2500 1700 0    39   ~ 0
+PIN2
+NoConn ~ 2250 1450
+NoConn ~ 3050 1650
+Text Label 3050 2150 2    39   ~ 0
+PIN2
 $EndSCHEMATC

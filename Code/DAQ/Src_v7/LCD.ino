@@ -1,3 +1,13 @@
+/*
+ *        LA IDEA ES HACER ALGO COMO:
+ *        --------------------------
+ *        |    MODO
+ *        |    HORA
+ *        |   CANALES DE +-15V PASANDO
+ *        |    CANALES DE 05 PASANDO
+ *        -------------------------    
+ */           
+
 #ifdef LCD
 void updateModeLCD()
 {
