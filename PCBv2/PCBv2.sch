@@ -126,7 +126,6 @@ NoConn ~ 2250 1900
 NoConn ~ 2200 1800
 NoConn ~ 2250 1750
 NoConn ~ 2200 1350
-NoConn ~ 2250 1300
 NoConn ~ 2200 1150
 NoConn ~ 2250 1100
 NoConn ~ 2250 1000
@@ -336,7 +335,6 @@ F 3 "" H 3650 1000 50  0001 C CNN
 	1    3650 1000
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3450 1400
 NoConn ~ 3450 1500
 NoConn ~ 5100 950 
 NoConn ~ 5100 1350
@@ -1686,20 +1684,9 @@ Text Label 4050 1600 2    39   ~ 0
 PIN11
 Text Label 4050 1700 2    39   ~ 0
 PIN10
-Text Label 4050 1800 2    39   ~ 0
-GND
-$Comp
-L Conn_01x04 J14
-U 1 1 5B0C0681
-P 4250 1700
-F 0 "J14" H 4250 1900 50  0000 C CNN
-F 1 "Conn_01x04" H 4250 1400 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 4250 1700 50  0001 C CNN
-F 3 "" H 4250 1700 50  0001 C CNN
-	1    4250 1700
-	1    0    0    -1  
-$EndComp
 Text Label 4050 1900 2    39   ~ 0
+GND
+Text Label 4050 2000 2    39   ~ 0
 GND
 Text Label 3450 1200 2    39   ~ 0
 PIN11
@@ -1715,4 +1702,23 @@ Text Label 4100 4150 3    39   ~ 0
 PIN35
 Text Label 8100 900  2    39   ~ 0
 PIN35
+Wire Wire Line
+	2250 1300 2500 1300
+Text Label 2500 1300 0    39   ~ 0
+PIN9
+Text Label 3450 1400 2    39   ~ 0
+PIN9
+$Comp
+L Conn_01x05 J14
+U 1 1 5B15155E
+P 4250 1800
+F 0 "J14" H 4250 2100 50  0000 C CNN
+F 1 "Conn_01x05" H 4250 1500 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05_Pitch2.54mm" H 4250 1800 50  0001 C CNN
+F 3 "" H 4250 1800 50  0001 C CNN
+	1    4250 1800
+	1    0    0    -1  
+$EndComp
+Text Label 4050 1800 2    39   ~ 0
+PIN9
 $EndSCHEMATC

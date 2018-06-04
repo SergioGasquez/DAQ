@@ -1,4 +1,12 @@
 #ifdef RTC
+
+/*              initRTC
+ * ----------------------------------------
+ * Initializes the DS3231 and sets the 
+ * date and time as the date and time
+ * in which the program was built and
+ * uploaded to the Arduino
+ */
 void initRTC()
 {
   if (!rtc.begin()) {
@@ -6,7 +14,7 @@ void initRTC()
     while (1);
   }
  
-  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));  // Fijar a fecha y hora de compilacion
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));  // Sets the RTC hour to the date and time in which the program was built and uploaded to the Arduino
 
 #if DEBUGGING
   Serial.println("RTC Initialized");
@@ -15,6 +23,13 @@ void initRTC()
 
 }
 
+
+/*              getTime
+ * ----------------------------------------
+ * Obtains from the RTC the date and time
+ * and stores it in the global variables
+ * created for this purpose.
+ */
 void getTime()
 {
   ResetWTDG();

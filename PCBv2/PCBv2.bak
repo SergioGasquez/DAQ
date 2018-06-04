@@ -94,8 +94,6 @@ Text Label 2500 2250 0    39   ~ 0
 SCL
 Text Label 2500 2350 0    39   ~ 0
 5V
-Text Label 2500 2750 0    39   ~ 0
-PIN37
 Text Label 2500 2800 0    39   ~ 0
 PIN39
 Text Label 2500 2850 0    39   ~ 0
@@ -114,7 +112,6 @@ NoConn ~ 2200 3200
 NoConn ~ 2250 3050
 NoConn ~ 2200 3000
 NoConn ~ 2250 2950
-NoConn ~ 2200 2700
 NoConn ~ 2250 2650
 NoConn ~ 2250 2550
 NoConn ~ 2250 2450
@@ -129,7 +126,6 @@ NoConn ~ 2250 1900
 NoConn ~ 2200 1800
 NoConn ~ 2250 1750
 NoConn ~ 2200 1350
-NoConn ~ 2250 1300
 NoConn ~ 2200 1150
 NoConn ~ 2250 1100
 NoConn ~ 2250 1000
@@ -244,8 +240,6 @@ Text Label 4300 4150 3    39   ~ 0
 PIN39
 Text Label 4400 4150 3    39   ~ 0
 PIN41
-Text Label 4200 4150 3    39   ~ 0
-PIN37
 Text Label 3900 4150 3    39   ~ 0
 PIN31
 Text Label 2500 2600 0    39   ~ 0
@@ -279,7 +273,6 @@ NoConn ~ 3600 4150
 NoConn ~ 3700 4150
 NoConn ~ 3800 4150
 NoConn ~ 4000 4150
-NoConn ~ 4100 4150
 $Comp
 L Conn_01x08 J4
 U 1 1 5AFFF0BE
@@ -342,7 +335,6 @@ F 3 "" H 3650 1000 50  0001 C CNN
 	1    3650 1000
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3450 1400
 NoConn ~ 3450 1500
 NoConn ~ 5100 950 
 NoConn ~ 5100 1350
@@ -431,8 +423,6 @@ F 3 "" H 8200 750 60  0001 C CNN
 $EndComp
 Text Label 8100 800  2    39   ~ 0
 PIN39
-Text Label 8100 900  2    39   ~ 0
-PIN37
 Text Label 8100 1000 2    39   ~ 0
 -15V
 Text Label 8100 1100 2    39   ~ 0
@@ -717,8 +707,6 @@ Wire Wire Line
 	2250 2850 2500 2850
 Wire Wire Line
 	2200 2800 2500 2800
-Wire Wire Line
-	2250 2750 2500 2750
 Wire Wire Line
 	2250 2350 2500 2350
 Wire Wire Line
@@ -1696,23 +1684,41 @@ Text Label 4050 1600 2    39   ~ 0
 PIN11
 Text Label 4050 1700 2    39   ~ 0
 PIN10
-Text Label 4050 1800 2    39   ~ 0
-GND
-$Comp
-L Conn_01x04 J14
-U 1 1 5B0C0681
-P 4250 1700
-F 0 "J14" H 4250 1900 50  0000 C CNN
-F 1 "Conn_01x04" H 4250 1400 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 4250 1700 50  0001 C CNN
-F 3 "" H 4250 1700 50  0001 C CNN
-	1    4250 1700
-	1    0    0    -1  
-$EndComp
 Text Label 4050 1900 2    39   ~ 0
+GND
+Text Label 4050 2000 2    39   ~ 0
 GND
 Text Label 3450 1200 2    39   ~ 0
 PIN11
 Text Label 3450 1300 2    39   ~ 0
 PIN10
+NoConn ~ 2250 2750
+Wire Wire Line
+	2200 2700 2500 2700
+Text Label 2500 2700 0    39   ~ 0
+PIN35
+NoConn ~ 4200 4150
+Text Label 4100 4150 3    39   ~ 0
+PIN35
+Text Label 8100 900  2    39   ~ 0
+PIN35
+Wire Wire Line
+	2250 1300 2500 1300
+Text Label 2500 1300 0    39   ~ 0
+PIN9
+Text Label 3450 1400 2    39   ~ 0
+PIN9
+$Comp
+L Conn_01x05 J?
+U 1 1 5B15155E
+P 4250 1800
+F 0 "J?" H 4250 2100 50  0000 C CNN
+F 1 "Conn_01x05" H 4250 1500 50  0000 C CNN
+F 2 "" H 4250 1800 50  0001 C CNN
+F 3 "" H 4250 1800 50  0001 C CNN
+	1    4250 1800
+	1    0    0    -1  
+$EndComp
+Text Label 4050 1800 2    39   ~ 0
+PIN9
 $EndSCHEMATC

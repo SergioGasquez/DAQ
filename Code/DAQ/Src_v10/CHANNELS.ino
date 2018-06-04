@@ -1,3 +1,16 @@
+/*                readADC
+ * ----------------------------------------
+ * Read an ADC channel 100 times in order to  
+ * average and reduce the error.
+ * 
+ * Inputs:
+ *  - channel(int): number of the channel 
+ *  of the ADC that we want to read.
+ * Outputs:
+ *  - aux (float): final read of the channel
+ *  after the averaging is made.
+ */
+
 float readADC(int channel)
 {
   ResetWTDG();
@@ -11,6 +24,19 @@ float readADC(int channel)
   return aux;
 }
 
+/*                readADC
+ * ----------------------------------------
+ * Read an Arduino analog channel 100 times 
+ * in order to average and reduce the error.
+ * 
+ * Inputs:
+ *  - channel(int): number of the channel 
+ *  of the ADC that we want to read.
+ * Outputs:
+ *  - aux (float): final read of the channel
+ *  after the averaging is made.
+ */
+
 float readAnalog(int channel)
 {
   ResetWTDG();
@@ -23,6 +49,16 @@ float readAnalog(int channel)
   aux = aux / 100;
   return aux;
 }
+
+/*              measureChannels
+ * ----------------------------------------
+ * Saves in the global variables made
+ * for storing the channels values
+ * the actual value of the channel.
+ * 
+ * It only saves active channels of 
+ * the system.
+ */
 
 
 
@@ -80,64 +116,21 @@ void measureChannels()
     setChannel(8);
     delay(100);
     valMulti_E8 = readADC(1);
-    Serial.print("valMulti_E8"); Serial.println(valMulti_E8);
   }
   if (multi_E3)
   {
     setChannel(3);
     delay(100);
     valMulti_E3 = readADC(1);
-    Serial.print("valMulti_E3"); Serial.println(valMulti_E3);
   }
   if (multi_E4)
   {
     setChannel(4);
     delay(100);
     valMulti_E4 = readADC(1);
-    Serial.print("valMulti_E4"); Serial.println(valMulti_E4);
   }
 }
 
 
 
-//  if (smu)
-//  {
-//
-//  }
-//  if (ADC_2)
-//  {
-//  }
-//  if (ADC_3)
-//  {
-//  }
-//  if (ARDU_A8)
-//  {
-//  }
-//  if (ARDU_A9)
-//  {
-//  }
-//  if (ARDU_A10)
-//  {
-//  }
-//  if (ARDU_A11)
-//  {
-//  }
-//  if (multi_E5)
-//  {
-//  }
-//  if (multi_E6)
-//  {
-//  }
-//  if (multi_E7)
-//  {
-//  }
-//  if (multi_E8)
-//  {
-//  }
-//  if (multi_E3)
-//  {
-//  }
-//  if (multi_E4)
-//  {
-//  }
 

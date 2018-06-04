@@ -1,14 +1,14 @@
-/*
-          LA IDEA ES HACER ALGO COMO:
-          --------------------------
-          |    MODO
-          |    HORA
-          |   CANALES DE +-15V PASANDO
-          |    CANALES DE 05 PASANDO
-          -------------------------
-*/
-
 #ifdef LCD
+
+
+/*              updateModeLCD
+ * ----------------------------------------
+ * Updates the top of the LCD display
+ * showing the mode of the system
+ * either is USB Mode when connected t
+ * to a PC or Autonomous Mode when
+ * connected to a battery.
+ */
 void updateModeLCD()
 {
   ResetWTDG();
@@ -29,32 +29,50 @@ void updateModeLCD()
     myGLCD.update();
   }
 }
+
+/*              updateTaskLCD
+ * ----------------------------------------
+ * Updates  the LCD display in order to 
+ * show the task that the system is running
+ * at any time.
+ */
 void updateTaskLCD(int task)
 {
   myGLCD.clrScr();
   updateModeLCD();
   myGLCD.setFont(SmallFont);
+  if (task == 0)
+  {
+    myGLCD.print("Initializating", 0, 15);
+    myGLCD.print("    modules", 0, 25);
+    myGLCD.print("     ...", 0, 35);
+  }
   if (task == 1)
   {
-    myGLCD.print("   Enviando", 0, 15);
-    myGLCD.print("    datos", 0, 25);
-    myGLCD.print("     ...", 0, 35);
+    myGLCD.print("    Sending", 0, 15);
+    myGLCD.print("     data", 0, 25);
+    myGLCD.print("      ...", 0, 35);
   }
   if (task == 2)
   {
-    myGLCD.print("  Guardando", 0, 15);
-    myGLCD.print("    datos", 0, 25);
-    myGLCD.print("    en SD", 0, 35);
+    myGLCD.print("    Saving", 0, 15);
+    myGLCD.print("     data", 0, 25);
+    myGLCD.print("    in SD", 0, 35);
   }
   if (task == 3)
   {
-    myGLCD.print("   Midiendo", 0, 15);
-    myGLCD.print("   canales", 0, 25);
+    myGLCD.print("  Measuring", 0, 15);
+    myGLCD.print("   channels", 0, 25);
     myGLCD.print("     ...", 0, 35);
   }
   myGLCD.update();
-
 }
+
+/*              updateConfigLCD
+ * ----------------------------------------
+ * Updates  the LCD display in order to 
+ * show the channels that are active.
+ */
 void updateConfigLCD()
 {
   ResetWTDG();
@@ -68,7 +86,7 @@ void updateConfigLCD()
   }
   else
   {
-    myGLCD.print("Salida TT", 0, 12);
+    myGLCD.print("ScrewTerminal", 0, 12);
   }
   // ADC
   myGLCD.print("ADC Chs: ", 0, 21);

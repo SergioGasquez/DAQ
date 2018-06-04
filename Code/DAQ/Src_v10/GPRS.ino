@@ -1,4 +1,13 @@
 #ifdef COMGPRS
+#define pwrPin 9
+
+
+
+/*                ShowSerialData
+ * ----------------------------------------
+ * Shows the data sent from the SIM900
+ * trhough the Serial Monitor
+ */
 void ShowSerialData()
 {
   while (SIM900.available() != 0)
@@ -6,8 +15,32 @@ void ShowSerialData()
     Serial.write(char (SIM900.read()));
   }
 }
+
+/*                powerUp
+ * ----------------------------------------
+ * Turns on the SIM900
+ */
+void powerUp()
+{
+ pinMode(pwrPin, OUTPUT); 
+ digitalWrite(pwrPin,LOW);
+ delay(1000);
+ digitalWrite(pwrPin,HIGH);
+ delay(2000);
+ digitalWrite(pwrPin,LOW);
+ delay(3000);
+}
+
+/*                initSIM900
+ * ----------------------------------------
+ * Initialices the module at his baudrate
+ * and sends some AT commands in order
+ * to setup the configuration to
+ * be able to send data afterwards.
+ */
 void initSIM900()
 {
+  powerUp();
   SIM900.begin(19200);
   delay(2000);
   SIM900.println("AT");
@@ -42,13 +75,18 @@ void initSIM900()
   delay(5000);
   ShowSerialData();
   delay(5000);
-  SIM900.println("AT+CIFSR"); 
+  SIM900.println("AT+CIFSR");
   delay(5000);
   ShowSerialData();
   delay(5000);
 }
 
-
+/*                sendConfig
+ * ----------------------------------------
+ * Opens a TCP-IP socket and sends
+ * the actual configuration to the 
+ * ThingSpeak Channel.
+ */
 void sendConfig()
 {
   char strFrame1[1024];
@@ -80,6 +118,13 @@ void sendConfig()
 }
 
 
+
+/*                sendData
+ * ----------------------------------------
+ * Opens a TCP-IP socket and sends
+ * the actual values of the active channels 
+ * to the ThingSpeak Channel.
+ */
 void sendData()
 {
   ResetWTDG();

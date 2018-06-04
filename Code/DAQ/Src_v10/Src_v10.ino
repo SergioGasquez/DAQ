@@ -1,73 +1,84 @@
-// DEFINES //
+/*
+ *         Data Acquisition System
+ *          Sergio Gasquez Arcos
+ * 
+ * 
+ *     https://github.com/SergioGasquez/DAQ
+ * 
+ * 
+ */
 
+//-------------- DEFINES --------------//
 #define LCD
 #define RTC
 #define microSD
 #define ADC
 #define DAC
 #define MULTIPLEXER
-#define MULTIPLEXER2            // DESARROLAR FUNCION
+#define MULTIPLEXER2
 #define MEM_EEPROM
 #define COMGPRS
 #define DEBUGGING true
 
+//-------------- TIMERS --------------//
+#define WTDG_CYCLES  10
+#define COMM_TIME 60     // Time between comms (in seconds)
+#define SD_TIME 600     // Time between saves in the SD (in seconds)
 
-
-#define CICLOS_WTDG  10
-#define TIEMPO_COMUNICACIONES 60//900     // (Segundos) COMUNICAR CADA 15 mins
-#define TIEMPO_SD 600//900     // (Segundos) COMUNICAR CADA 15 mins
-
-#define maxciclosComunicaciones (TIEMPO_COMUNICACIONES/8)     // Ciclos ante de enviar los datos por sigfox. Se calcula con el Tiempo en segundos definido previamente
-#define maxciclosSD (TIEMPO_SD/8)     // Ciclos ante de enviar los datos por sigfox. Se calcula con el Tiempo en segundos definido previamente
+#define maxCyclesComm (COMM_TIME/8)
+#define maxCyclesSD (SD_TIME/8)
 
 
 
 #include <Wire.h>
 #include <avr/wdt.h>
+#include <avr/sleep.h>
 
-// SD
+
+//-------------- SD --------------// 
 #ifdef microSD
 #include <SPI.h>
 #include <SD.h>
-int pinCS = 53; // Pin 10 on Arduino Uno
+int pinCS = 53;
 #endif //microSD
 
 
+//-------------- GPRS --------------//
 #ifdef COMGPRS
 #include <SoftwareSerial.h>
 SoftwareSerial SIM900(10, 11); // (RX, TX)
 #endif //GPRS
 
 
-// WTDG
+//-------------- WTDG --------------//
 volatile int ISRCounterWTDG = 0;
 
 
-// ADC
+//-------------- ADC --------------//
 #ifdef ADC
 #include <Adafruit_ADS1015.h>
-Adafruit_ADS1115 ads(0x48); // ADC 0x48 is the default address
+Adafruit_ADS1115 ads(0x48);     // ADC 0x48 is the default address
 #endif //ADC
 
-// DAC
+//-------------- DAC --------------//
 #ifdef DAC
 #include <Adafruit_MCP4725.h>
-Adafruit_MCP4725 dac;       // DAC
+Adafruit_MCP4725 dac;
 #endif //DAC
 
-// RTC
+//-------------- RTC --------------//
 #ifdef RTC
-#include "RTClib.h"       // A5 ->SCL A4 ->SDA
+#include "RTClib.h"             // A5 ->SCL   A4 ->SDA
 RTC_DS3231 rtc;
 #endif //RTC
 
-// LCD
+//-------------- LCD --------------//
 #ifdef LCD
 #include<LCD5110_Graph.h>
-LCD5110 myGLCD(6, 5, 4, 2, 3); // myGLCD(CLK,DIN,DC,RST,CE)
+LCD5110 myGLCD(6, 5, 4, 2, 3);  // myGLCD(CLK,DIN,DC,RST,CE)
 #endif //LCD
 
-// MULTIPLEXER
+//-------------- MULTIPLEXER --------------//
 #ifdef MULTIPLEXER
 int enablePin = 35;
 int multiplexerA0 = 39;
@@ -79,20 +90,18 @@ int multiplexerA2 = 43;
 int multiplexer2Pin = 31;
 #endif //MULTIPLEXER2
 
-// Global Voltage
-float voltage = 0.0;  // Initialize Voltage
 
 // File for SD
 #ifdef microSD
-File myFile;                // Declare global file
-String fileNameStr;            // File of the .txt
+File myFile;                      // Declare global file
+String fileNameStr;               // File of the .txt
 char fileName[12];
 
-unsigned int ciclosSD = 0;
+unsigned int sdCycles = 0;
 volatile bool flagSD = false;
 #endif //microSD
 
-// Global Variables of date and time
+// Global Variables for date and time
 #ifdef RTC
 byte dayRTC;
 byte monthRTC;
@@ -113,14 +122,14 @@ bool autonomousMode = true;
 
 
 #ifdef COMGPRS
-unsigned int ciclosComunicaciones = 0;
-volatile bool flagComunicaciones = false;
+unsigned int commCycles = 0;
+volatile bool commFlag = false;
 #endif // COMGPRS
 
 char confStr1[9] = "9";
 char confStr2[10] = "9";
 
-// VALIABLES CONFIG
+// Cofiguration Variables
 boolean smu = true;
 boolean ADC_2 = true;
 boolean ADC_3 = true;
@@ -134,7 +143,8 @@ boolean multi_E7 = true;
 boolean multi_E8 = true;
 boolean multi_E3 = true;
 boolean multi_E4 = true;
-// VARIABLES PARA ALMACENAR VALORES
+
+// Channels values
 int valSMU = 0;
 int valADC_2 = 0;
 int valADC_3 = 0;
@@ -151,9 +161,21 @@ int valMulti_E4 = 0;
 
 
 
-// Funciones externas
+//-------------- FUNCTIONS --------------//
 void(* ResetSW) (void) = 0;
 
+
+/*        Watchdog Interrup Function
+ * ----------------------------------------
+ * Each time watcdog interrupt is triggered
+ * (and it will be triggered each 8 secs)
+ * this function will run.
+ * 
+ * We increment in 1 all the counters and if
+ * any counter has reach his max, it activates
+ * the flag.
+ *
+ */
 
 ISR (WDT_vect)
 {
@@ -161,48 +183,52 @@ ISR (WDT_vect)
 #if DEBUGGING
   //Serial.print("WTDG: ");Serial.println(ISRCounterWTDG);
 #endif //DEBUGGING
-  if (ISRCounterWTDG >= CICLOS_WTDG)
+  if (ISRCounterWTDG >= WTDG_CYCLES)
   {
     delay(50);
     ISRCounterWTDG = 0;
 #if DEBUGGING
-    Serial.println("Reset por WD");
+    Serial.println("Reset due to WTDG");
 #endif //DEBUGGING
     delay(1000);
     ResetSW();
   }
-
 #ifdef COMGPRS
-  ciclosComunicaciones++;
-  if (ciclosComunicaciones >= maxciclosComunicaciones)
+  commCycles++;
+  if (commCycles >= maxCyclesComm)
   {
-    flagComunicaciones = true;
-    ciclosComunicaciones = 0;
+    commFlag = true;
+    commCycles = 0;
 #if DEBUGGING
-    //Serial.println("flagComunicaciones");
+    //Serial.println("commFlag");
 #endif //DEBUGGING  
   }
 #if DEBUGGING
-  //Serial.print("ciclosComunicaciones: "); Serial.println(ciclosComunicaciones);
+  //Serial.print("commCycles: "); Serial.println(commCycles);
 #endif //DEBUGGING  
 #endif //COMGPRS
 
 #ifdef microSD
-  ciclosSD++;
-  //Serial.print("ciclosSD: "); Serial.println(ciclosSD);
-  if (ciclosSD >= maxciclosSD)
+  sdCycles++;
+#if DEBUGGING
+  //Serial.print("sdCycles: "); Serial.println(sdCycles);
+#endif //DEBUGGING
+  if (sdCycles >= maxCyclesSD)
   {
     flagSD = true;
-    ciclosSD = 0;
+    sdCycles = 0;
 #if DEBUGGING
     //Serial.print("flagSD: "); Serial.println(flagSD);
 #endif //DEBUGGING  
   }
 #endif //microSD
-
-
 }// Final ISR
 
+/*                Flash
+ * ----------------------------------------
+ * It makes the builtin flash in order
+ * to debug without a Serial Monitor
+ */
 
 void flash()
 {
@@ -222,12 +248,12 @@ void setup()
 
 
 #ifdef DAC
-  dac.begin(0x62); // Default address for MCP4725A1
+  dac.begin(0x62);        // Default address for MCP4725A1
   delay(500);
 #endif //DAC
 
 #ifdef ADC
-  ads.begin();    // Initalice the adc
+  ads.begin();
   delay(500);
 #endif //ADC
 
@@ -235,8 +261,8 @@ void setup()
   myGLCD.InitLCD();
   myGLCD.setFont(SmallFont);
   randomSeed(analogRead(7));
-  updateModeLCD();
   delay(100);
+  updateTaskLCD(0); 
 #endif //LCD
 
 #ifdef COMGPRS
@@ -270,27 +296,28 @@ void setup()
 void loop()
 {
   ResetWTDG();
+  cpuSleep();
 #ifdef COMGPRS
-  if (flagComunicaciones)
+  if (commFlag)
   {
     updateTaskLCD(1);
     ResetWTDG();
-    flagComunicaciones = false;
+    commFlag = false;
 #if DEBUGGING
-    Serial.println("Se envian los datos");
+    Serial.println("Data will be sent...");
 #endif DEBUGGING
 #ifdef LCD
     updateTaskLCD(3);
-#endif
+#endif // LCD
     measureChannels();
     delay(1000);
 #ifdef LCD
     updateTaskLCD(1);
-#endif
+#endif // LCD
     sendData();
 #ifdef LCD
     updateConfigLCD();
-#endif
+#endif // LCD
   }
 #endif // COMGPRS
 
@@ -300,11 +327,11 @@ void loop()
     ResetWTDG();
     flagSD = false;
 #if DEBUGGING
-    Serial.println("Se guardan los datos");
-#endif DEBUGGING
+    Serial.println("Data will be saved in the SD Card");
+#endif //DEBUGGING
 #ifdef LCD
     updateTaskLCD(3);
-#endif
+#endif // LCD
     measureChannels();
     delay(2000);
     updateTaskLCD(2);
@@ -313,7 +340,7 @@ void loop()
     delay(2000);
 #ifdef LCD
     updateConfigLCD();
-#endif();
+#endif// LCD;
   }
 #endif //microSD
 

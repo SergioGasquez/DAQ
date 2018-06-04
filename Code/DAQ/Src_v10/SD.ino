@@ -1,5 +1,11 @@
 #ifdef microSD
-
+/*              saveHeaders
+ * ----------------------------------------
+ * Create a line in the SD file with
+ * the name of the channels active
+ * easily identify each field in the CSV
+ * file.
+ */
 void saveHeaders()
 {
   ResetWTDG();
@@ -35,12 +41,13 @@ void saveHeaders()
 }
 
 
-
-
-
-
-
-
+/*                 initSD
+ * ----------------------------------------
+ * Initializes the SD module.Generates
+ * the name of the file where it will
+ * write the information with the date
+ * and calls the saveHeaders function.
+ */
 void initSD()
 {
   pinMode(pinCS, OUTPUT);
@@ -76,7 +83,11 @@ void initSD()
 
 
 
-
+/*                 saveToSD
+ * ----------------------------------------
+ * Saves the actual values of the active 
+ * channels, date and time in the SD file.
+ */
 void saveToSD()
 {
   ResetWTDG();
@@ -173,6 +184,14 @@ void saveToSD()
   delay(10);
 }
 
+
+
+/*                 readSD
+ * ----------------------------------------
+ * Read the file of the SD showing in 
+ * the Serial Monitor all the information
+ * in it.
+ */
 void readSD()
 {
   myFile = SD.open(fileName);

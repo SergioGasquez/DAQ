@@ -1,4 +1,11 @@
 #ifdef MULTIPLEXER
+
+/*              initMultiplexer
+ * ----------------------------------------
+ * Initializes the ADG408 by definning
+ * the selected inputs as outputs
+ * and enabling the multiplxer.
+ */
 void initMultiplexer()
 {
   pinMode(enablePin, OUTPUT);
@@ -12,6 +19,13 @@ void initMultiplexer()
 #endif //DEBUGGING
 }
 
+
+/*              setChannel
+ * ----------------------------------------
+ * Funtion that selects which channel of
+ * the multiplexer will be conected to
+ * the output.
+ */
 void setChannel(byte channel)
 {
   ResetWTDG();
@@ -66,7 +80,7 @@ void setChannel(byte channel)
   else
   {
 #if DEBUGGING
-    Serial.println("Error en la seleccion de canal");
+    Serial.println("Error. Wrong channel");
 #endif //DEBUGGING
   }
 }
