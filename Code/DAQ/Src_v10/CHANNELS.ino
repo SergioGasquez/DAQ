@@ -1,15 +1,15 @@
 /*                readADC
- * ----------------------------------------
- * Read an ADC channel 100 times in order to  
- * average and reduce the error.
- * 
- * Inputs:
- *  - channel(int): number of the channel 
- *  of the ADC that we want to read.
- * Outputs:
- *  - aux (float): final read of the channel
- *  after the averaging is made.
- */
+   ----------------------------------------
+   Read an ADC channel 100 times in order to
+   average and reduce the error.
+
+   Inputs:
+    - channel(int): number of the channel
+    of the ADC that we want to read.
+   Outputs:
+    - aux (float): final read of the channel
+    after the averaging is made.
+*/
 
 float readADC(int channel)
 {
@@ -25,17 +25,17 @@ float readADC(int channel)
 }
 
 /*                readADC
- * ----------------------------------------
- * Read an Arduino analog channel 100 times 
- * in order to average and reduce the error.
- * 
- * Inputs:
- *  - channel(int): number of the channel 
- *  of the ADC that we want to read.
- * Outputs:
- *  - aux (float): final read of the channel
- *  after the averaging is made.
- */
+   ----------------------------------------
+   Read an Arduino analog channel 100 times
+   in order to average and reduce the error.
+
+   Inputs:
+    - channel(int): number of the channel
+    of the ADC that we want to read.
+   Outputs:
+    - aux (float): final read of the channel
+    after the averaging is made.
+*/
 
 float readAnalog(int channel)
 {
@@ -51,14 +51,14 @@ float readAnalog(int channel)
 }
 
 /*              measureChannels
- * ----------------------------------------
- * Saves in the global variables made
- * for storing the channels values
- * the actual value of the channel.
- * 
- * It only saves active channels of 
- * the system.
- */
+   ----------------------------------------
+   Saves in the global variables made
+   for storing the channels values
+   the actual value of the channel.
+
+   It only saves active channels of
+   the system.
+*/
 
 
 
@@ -72,6 +72,19 @@ void measureChannels()
   if (ADC_2)
   {
     valADC_2 = readADC(2);
+    if (!smu)
+    {
+      float aux;
+      Serial.print("Channel 2: "); Serial.println(valADC_2);
+      aux = valADC_2 * 0.1875 / 1000 ;
+      Serial.print("Channel 2 Vol: "); Serial.println(aux);
+      dacVal = aux * 4096 / 5;
+      if (dacVal > 4096) dacVal = 4096;
+      if (dacVal < 0) dacVal = 0;
+      Serial.print("dacVal: "); Serial.println(dacVal);
+      dac.setVoltage(dacVal, false);
+      delay(3000);
+    }
   }
   if (ADC_3)
   {

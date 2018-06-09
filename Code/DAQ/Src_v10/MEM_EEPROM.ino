@@ -17,14 +17,16 @@
 #define multi_E8_ADD 11
 #define multi_E3_ADD 12
 #define multi_E4_ADD 13
+#define typeSMU_ADD 14
+
 
 
 /*              readConfigEEPROM
- * ----------------------------------------
- * Read the defined registers of the EEPROM
- * memory in order to obtain the last 
- * configuration saved.
- */
+   ----------------------------------------
+   Read the defined registers of the EEPROM
+   memory in order to obtain the last
+   configuration saved.
+*/
 void readConfigEEPROM()
 {
   smu = EEPROM.read(SMU_ADD);
@@ -40,30 +42,34 @@ void readConfigEEPROM()
   multi_E8 = EEPROM.read(multi_E8_ADD);
   multi_E3 = EEPROM.read(multi_E3_ADD);
   multi_E4 = EEPROM.read(multi_E4_ADD);
+  typeSMU = EEPROM.read(typeSMU_ADD);
+
 #if DEBUGGING
   Serial.println("Read configuration: ");
-  Serial.print("smu: ");Serial.println(smu);
-  Serial.print("ADC_2: ");Serial.println(ADC_2);
-  Serial.print("ADC_3: ");Serial.println(ADC_3);
-  Serial.print("ARDU_A8: ");Serial.println(ARDU_A8);
-  Serial.print("ARDU_A9: ");Serial.println(ARDU_A9);
-  Serial.print("ARDU_A10: ");Serial.println(ARDU_A10);
-  Serial.print("ARDU_A11: ");Serial.println(ARDU_A11);
-  Serial.print("multi_E5: ");Serial.println(multi_E5);
-  Serial.print("multi_E6: ");Serial.println(multi_E6);
-  Serial.print("multi_E7: ");Serial.println(multi_E7);
-  Serial.print("multi_E3: ");Serial.println(multi_E3);
-  Serial.print("multi_E4: ");Serial.println(multi_E4);
+  Serial.print("smu: "); Serial.println(smu);
+  Serial.print("ADC_2: "); Serial.println(ADC_2);
+  Serial.print("ADC_3: "); Serial.println(ADC_3);
+  Serial.print("ARDU_A8: "); Serial.println(ARDU_A8);
+  Serial.print("ARDU_A9: "); Serial.println(ARDU_A9);
+  Serial.print("ARDU_A10: "); Serial.println(ARDU_A10);
+  Serial.print("ARDU_A11: "); Serial.println(ARDU_A11);
+  Serial.print("multi_E5: "); Serial.println(multi_E5);
+  Serial.print("multi_E6: "); Serial.println(multi_E6);
+  Serial.print("multi_E7: "); Serial.println(multi_E7);
+  Serial.print("multi_E3: "); Serial.println(multi_E3);
+  Serial.print("multi_E4: "); Serial.println(multi_E4);
+  Serial.print("typeSMU: "); Serial.println(typeSMU);
+
 #endif // DEBUGGING 
 }
 
 
 /*              saveConfigEEPROM
- * ----------------------------------------
- * Writes the defined registers of the EEPROM
- * memory in order to save the last 
- * configuration saved.
- */
+   ----------------------------------------
+   Writes the defined registers of the EEPROM
+   memory in order to save the last
+   configuration saved.
+*/
 void saveConfigEEPROM()
 {
   EEPROM.write(SMU_ADD, smu);
@@ -79,6 +85,7 @@ void saveConfigEEPROM()
   EEPROM.write(multi_E8_ADD, multi_E8);
   EEPROM.write(multi_E3_ADD, multi_E3);
   EEPROM.write(multi_E4_ADD, multi_E4);
+  EEPROM.write(typeSMU_ADD, typeSMU);
 #if DEBUGGING
   Serial.println("Configuration has been saved in the EEPROM");
 #endif // DEBUGGING

@@ -1,18 +1,18 @@
 
 /*                 waitForKey
- * ----------------------------------------
- * Function that waits for the user to
- * introduce either a '1' or a '2' in
- * the Serial Monitor.Otherwise
- * it will show an error.
- * 
- * Inputs:
- *  - variable(boolean): variable where the result will be stored.
- *  
- * Outputs:
- *  - variable(boolean): final of the boolean after reading what the user
- *  introduced.
- */
+   ----------------------------------------
+   Function that waits for the user to
+   introduce either a '1' or a '2' in
+   the Serial Monitor.Otherwise
+   it will show an error.
+
+   Inputs:
+    - variable(boolean): variable where the result will be stored.
+
+   Outputs:
+    - variable(boolean): final of the boolean after reading what the user
+    introduced.
+*/
 boolean waitForKey(boolean variable)
 {
   long tiempo = millis();
@@ -52,10 +52,10 @@ boolean waitForKey(boolean variable)
 }
 
 /*                 checkIfConnected
- * ----------------------------------------
- * Defines in which mode the system will be operating
- * by reading the Serial Monitor for 10 secs.
- */
+   ----------------------------------------
+   Defines in which mode the system will be operating
+   by reading the Serial Monitor for 10 secs.
+*/
 void checkIfConnected()
 {
   Serial.println("Send something in the next 10 seconds in order to start the configuration.");
@@ -82,11 +82,11 @@ void checkIfConnected()
 
 
 /*                 askConfiguration
- * ----------------------------------------
- * Ask for the user to write a new configuration
- * of the channels. The configuration is guided
- * by messages.
- */
+   ----------------------------------------
+   Ask for the user to write a new configuration
+   of the channels. The configuration is guided
+   by messages.
+*/
 void askConfiguration()
 {
   Serial.println("-----------Configuration--------------");
@@ -99,15 +99,30 @@ void askConfiguration()
   {
     strcat(confStr1, "1");
     Serial.println("You have choosen: SMU");
+    Serial.println("-------------------------------------------");
+
     // S1 of the multiplexer2
+    Serial.println("In the SMU. Do you want to do a voltage sweep (form -15V to 0V) or track it over time?");
+    Serial.print("1)Voltage sweep \n2)Track");
+    typeSMU = waitForKey(typeSMU);
+    if ( typeSMU == 1)
+    {
+      Serial.println("You have choosen: Voltage sweep");
+    }
+    if ( typeSMU == 0)
+    {
+      Serial.println("You have choosen: Track over time");
+    }
+    Serial.println("-------------------------------------------");
   }
   if ( smu == 0)
   {
     strcat(confStr1, "0");
     Serial.println("You have choosen: Scredriver terminal output");
+    Serial.println("-------------------------------------------");
+
     // S2 of the multiplexer2  }
   }
-  Serial.println("-------------------------------------------");
   Serial.println("Do you want to use the channel 1 of the ADC?");      // ADC_2
   Serial.println("1) Yes \n2) No");
   ADC_2 = waitForKey(ADC_2);
@@ -283,10 +298,10 @@ void askConfiguration()
 }
 
 /*                 configureSystem
- * ----------------------------------------
- * Configures the system by using the 
- * previous functions.
- */
+   ----------------------------------------
+   Configures the system by using the
+   previous functions.
+*/
 void configureSystem()
 {
   if (autonomousMode)

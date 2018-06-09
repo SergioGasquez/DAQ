@@ -4,10 +4,10 @@
 
 
 /*                ShowSerialData
- * ----------------------------------------
- * Shows the data sent from the SIM900
- * trhough the Serial Monitor
- */
+   ----------------------------------------
+   Shows the data sent from the SIM900
+   trhough the Serial Monitor
+*/
 void ShowSerialData()
 {
   while (SIM900.available() != 0)
@@ -17,27 +17,27 @@ void ShowSerialData()
 }
 
 /*                powerUp
- * ----------------------------------------
- * Turns on the SIM900
- */
+   ----------------------------------------
+   Turns on the SIM900
+*/
 void powerUp()
 {
- pinMode(pwrPin, OUTPUT); 
- digitalWrite(pwrPin,LOW);
- delay(1000);
- digitalWrite(pwrPin,HIGH);
- delay(2000);
- digitalWrite(pwrPin,LOW);
- delay(3000);
+  pinMode(pwrPin, OUTPUT);
+  digitalWrite(pwrPin, LOW);
+  delay(1000);
+  digitalWrite(pwrPin, HIGH);
+  delay(2000);
+  digitalWrite(pwrPin, LOW);
+  delay(3000);
 }
 
 /*                initSIM900
- * ----------------------------------------
- * Initialices the module at his baudrate
- * and sends some AT commands in order
- * to setup the configuration to
- * be able to send data afterwards.
- */
+   ----------------------------------------
+   Initialices the module at his baudrate
+   and sends some AT commands in order
+   to setup the configuration to
+   be able to send data afterwards.
+*/
 void initSIM900()
 {
   powerUp();
@@ -82,11 +82,11 @@ void initSIM900()
 }
 
 /*                sendConfig
- * ----------------------------------------
- * Opens a TCP-IP socket and sends
- * the actual configuration to the 
- * ThingSpeak Channel.
- */
+   ----------------------------------------
+   Opens a TCP-IP socket and sends
+   the actual configuration to the
+   ThingSpeak Channel.
+*/
 void sendConfig()
 {
   char strFrame1[1024];
@@ -120,11 +120,11 @@ void sendConfig()
 
 
 /*                sendData
- * ----------------------------------------
- * Opens a TCP-IP socket and sends
- * the actual values of the active channels 
- * to the ThingSpeak Channel.
- */
+   ----------------------------------------
+   Opens a TCP-IP socket and sends
+   the actual values of the active channels
+   to the ThingSpeak Channel.
+*/
 void sendData()
 {
   ResetWTDG();
@@ -198,6 +198,11 @@ void sendData()
   {
     strcat(strFrame2, "&field7=");
     strcat(strFrame2, itoa(valMulti_E4, auxStr, 10));
+  }
+  if (typeSMU)
+  {
+    strcat(strFrame2, "&field8=");
+    strcat(strFrame2, itoa(dacVal, auxStr, 10));
   }
   strcat(strFrame2, "\r\n\x1A");
 

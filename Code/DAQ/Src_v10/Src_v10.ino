@@ -1,12 +1,12 @@
 /*
- *         Data Acquisition System
- *          Sergio Gasquez Arcos
- * 
- * 
- *     https://github.com/SergioGasquez/DAQ
- * 
- * 
- */
+           Data Acquisition System
+            Sergio Gasquez Arcos
+
+
+       https://github.com/SergioGasquez/DAQ
+
+
+*/
 
 //-------------- DEFINES --------------//
 #define LCD
@@ -17,7 +17,7 @@
 #define MULTIPLEXER
 #define MULTIPLEXER2
 #define MEM_EEPROM
-#define COMGPRS
+//#define COMGPRS
 #define DEBUGGING true
 
 //-------------- TIMERS --------------//
@@ -35,7 +35,7 @@
 #include <avr/sleep.h>
 
 
-//-------------- SD --------------// 
+//-------------- SD --------------//
 #ifdef microSD
 #include <SPI.h>
 #include <SD.h>
@@ -131,6 +131,7 @@ char confStr2[10] = "9";
 
 // Cofiguration Variables
 boolean smu = true;
+boolean typeSMU = true;
 boolean ADC_2 = true;
 boolean ADC_3 = true;
 boolean ARDU_A8 = true;
@@ -158,6 +159,7 @@ int valMulti_E7 = 0;
 int valMulti_E8 = 0;
 int valMulti_E3 = 0;
 int valMulti_E4 = 0;
+int dacVal = 0;
 
 
 
@@ -166,16 +168,16 @@ void(* ResetSW) (void) = 0;
 
 
 /*        Watchdog Interrup Function
- * ----------------------------------------
- * Each time watcdog interrupt is triggered
- * (and it will be triggered each 8 secs)
- * this function will run.
- * 
- * We increment in 1 all the counters and if
- * any counter has reach his max, it activates
- * the flag.
- *
- */
+   ----------------------------------------
+   Each time watcdog interrupt is triggered
+   (and it will be triggered each 8 secs)
+   this function will run.
+
+   We increment in 1 all the counters and if
+   any counter has reach his max, it activates
+   the flag.
+
+*/
 
 ISR (WDT_vect)
 {
@@ -225,10 +227,10 @@ ISR (WDT_vect)
 }// Final ISR
 
 /*                Flash
- * ----------------------------------------
- * It makes the builtin flash in order
- * to debug without a Serial Monitor
- */
+   ----------------------------------------
+   It makes the builtin flash in order
+   to debug without a Serial Monitor
+*/
 
 void flash()
 {
@@ -262,7 +264,7 @@ void setup()
   myGLCD.setFont(SmallFont);
   randomSeed(analogRead(7));
   delay(100);
-  updateTaskLCD(0); 
+  updateTaskLCD(0);
 #endif //LCD
 
 #ifdef COMGPRS
@@ -295,54 +297,87 @@ void setup()
 
 void loop()
 {
-  ResetWTDG();
-  cpuSleep();
-#ifdef COMGPRS
-  if (commFlag)
+  if (!typeSMU)
   {
-    updateTaskLCD(1);
     ResetWTDG();
-    commFlag = false;
+    cpuSleep();
+#ifdef COMGPRS
+    if (commFlag)
+    {
+      updateTaskLCD(1);
+      ResetWTDG();
+      commFlag = false;
 #if DEBUGGING
-    Serial.println("Data will be sent...");
+      Serial.println("Data will be sent...");
 #endif DEBUGGING
 #ifdef LCD
-    updateTaskLCD(3);
+      updateTaskLCD(3);
 #endif // LCD
-    measureChannels();
-    delay(1000);
+      measureChannels();
+      delay(1000);
 #ifdef LCD
-    updateTaskLCD(1);
+      updateTaskLCD(1);
 #endif // LCD
-    sendData();
+      sendData();
 #ifdef LCD
-    updateConfigLCD();
+      updateConfigLCD();
 #endif // LCD
-  }
+    }
 #endif // COMGPRS
 
 #ifdef microSD
-  if (flagSD)
-  {
-    ResetWTDG();
-    flagSD = false;
+    if (flagSD)
+    {
+      ResetWTDG();
+      flagSD = false;
 #if DEBUGGING
-    Serial.println("Data will be saved in the SD Card");
+      Serial.println("Data will be saved in the SD Card");
 #endif //DEBUGGING
 #ifdef LCD
-    updateTaskLCD(3);
+      updateTaskLCD(3);
 #endif // LCD
-    measureChannels();
-    delay(2000);
-    updateTaskLCD(2);
-    getTime();
-    saveToSD();
-    delay(2000);
+      measureChannels();
+      delay(2000);
+      updateTaskLCD(2);
+      getTime();
+      saveToSD();
+      delay(2000);
 #ifdef LCD
-    updateConfigLCD();
+      updateConfigLCD();
 #endif// LCD;
-  }
+    }
 #endif //microSD
+  }
+  else
+  {
+    Serial.println("Voltage Sweep");
+    int counter;
+    for (counter = 0; counter < 20; counter++)
+    {
+#if DEBUGGING
+      Serial.print("dacVal: "); Serial.println(dacVal);
+#endif //DEBUGGIN
+      dacVal = counter * 100;
+      dac.setVoltage(dacVal, false);
+      getTime();
+#ifdef LCD
+      updateTaskLCD(3);
+#endif// LCD;
+      measureChannels();
+#ifdef LCD
+      updateTaskLCD(1);
+#endif// LCD;
+#ifdef COMGPRS
+      sendData();
+#endif // COMGPRS
+#ifdef LCD
+      updateTaskLCD(2);
+#endif// LCD;
+      saveToSD();
+      // HABRIA QUE ENVIAR EL VOLTAJE TAMBIEN?
+    }
+  }
+
 
 }
 

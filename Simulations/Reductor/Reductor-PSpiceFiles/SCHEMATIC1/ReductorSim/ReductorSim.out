@@ -1,5 +1,5 @@
-
-**** 05/19/18 13:15:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+**** 06/08/18 21:03:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
@@ -36,10 +36,10 @@ V_V3         N14515 0 -15Vdc
 X_U2B         N15432 N14507 N14447 N14515 VO LM358
 R_R4         N14507 VO  100k TC=0,0 
 R_R5         0 N14507  47k TC=0,0 
-X_U3B         N14974 N14956 N14931 N146973 N14956 LM358
-X_U4B         N15065 N15321 N15265 N15283 N15321 LM358
-R_R6         N15065 N14956  68k TC=0,0 
-R_R7         0 N15065  18k TC=0,0 
+X_U3B         N14974 VAS N14931 N146973 VAS LM358
+X_U4B         VB N15321 N15265 N15283 N15321 LM358
+R_R6         VB VAS  68k TC=0,0 
+R_R7         0 VB  18k TC=0,0 
 V_V5         N14931 0 15Vdc
 V_V6         N146973 0 -15Vdc
 V_V7         N15283 0 -15Vdc
@@ -53,7 +53,7 @@ R_R10         N16502 N15432  200k TC=0,0
 **** RESUMING ReductorSim.cir ****
 .END
 
-**** 05/19/18 13:15:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 06/08/18 21:03:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
@@ -99,7 +99,7 @@ R_R10         N16502 N15432  200k TC=0,0
          CJO   10.000000E-12 
 
 
-**** 05/19/18 13:15:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 06/08/18 21:03:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
@@ -187,7 +187,7 @@ R_R10         N16502 N15432  200k TC=0,0
            D     .52         
 
 
-**** 05/19/18 13:15:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 06/08/18 21:03:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
@@ -287,7 +287,7 @@ R_R10         N16502 N15432  200k TC=0,0
 
           JOB CONCLUDED
 
-**** 05/19/18 13:15:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 06/08/18 21:03:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
  ** Profile: "SCHEMATIC1-ReductorSim"  [ c:\users\sergi\documents\github\daq\simulations\reductor\reductor-pspicefiles\schematic1\red
 
@@ -299,5 +299,5 @@ R_R10         N16502 N15432  200k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .27
+  Total job time (using Solver 1)   =         .22
 
