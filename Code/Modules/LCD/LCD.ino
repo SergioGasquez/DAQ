@@ -1,7 +1,7 @@
 // LCD5110_Graph
 #include<LCD5110_Graph.h>
 
-LCD5110 myGLCD(7, 6, 5, 3, 4); // myGLCD(CLK,DIN,DC,RST,CE)
+LCD5110 myGLCD(6, 5, 4, 2, 3);  // myGLCD(CLK,DIN,DC,RST,CE)
 
 // Declaracíon de los tipos de letra
 extern uint8_t SmallFont[];

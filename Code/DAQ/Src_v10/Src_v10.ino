@@ -132,6 +132,7 @@ char confStr2[10] = "9";
 // Cofiguration Variables
 boolean smu = true;
 boolean typeSMU = true;
+boolean typeSignal = true;
 boolean ADC_2 = true;
 boolean ADC_3 = true;
 boolean ARDU_A8 = true;
@@ -348,7 +349,7 @@ void loop()
     }
 #endif //microSD
   }
-  else
+  if(typeSMU)
   {
     Serial.println("Voltage Sweep");
     int counter;
@@ -374,11 +375,19 @@ void loop()
       updateTaskLCD(2);
 #endif// LCD;
       saveToSD();
-      // HABRIA QUE ENVIAR EL VOLTAJE TAMBIEN?
     }
   }
-
-
+  if(!smu)
+  {
+    if(typeSignal)
+    {
+      generateWaveform(0);
+    }
+    if(!typeSignal)
+    {
+      generateWaveform(1);
+    }
+  }
 }
 
 

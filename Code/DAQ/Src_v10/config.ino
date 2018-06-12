@@ -93,16 +93,15 @@ void askConfiguration()
   Serial.println("Write '1' or '2' to choose the desired option :");
 
   Serial.println("Do you want to use the SMU or the screwdriver terminal output?");
-  Serial.print("1)SMU \n2)Scredriver terminal output");
+  Serial.print("1)SMU \n2)Generate a signal in the srewdiver terminal");
   smu = waitForKey(smu);
   if ( smu == 1)
   {
     strcat(confStr1, "1");
     Serial.println("You have choosen: SMU");
     Serial.println("-------------------------------------------");
-
     // S1 of the multiplexer2
-    Serial.println("In the SMU. Do you want to do a voltage sweep (form -15V to 0V) or track it over time?");
+    Serial.println("In the SMU. Do you want to do a voltage sweep (form -15 V to 0 V) or track it over time?");
     Serial.print("1)Voltage sweep \n2)Track");
     typeSMU = waitForKey(typeSMU);
     if ( typeSMU == 1)
@@ -118,10 +117,21 @@ void askConfiguration()
   if ( smu == 0)
   {
     strcat(confStr1, "0");
-    Serial.println("You have choosen: Scredriver terminal output");
+    Serial.println("You have choosen: Generate a signal in the srewdiver terminal");
     Serial.println("-------------------------------------------");
-
-    // S2 of the multiplexer2  }
+    // S2 of the multiplexer2
+    Serial.println("Which kind of signal would you like to generate?");
+    Serial.print("1)Ramp \n2)Sine");
+    typeSignal = waitForKey(typeSignal);
+    if ( typeSignal == 1)
+    {
+      Serial.println("You have choosen: Ramp");
+    }
+    if ( typeSignal == 0)
+    {
+      Serial.println("You have choosen: Sine");
+    }
+    Serial.println("-------------------------------------------");
   }
   Serial.println("Do you want to use the channel 1 of the ADC?");      // ADC_2
   Serial.println("1) Yes \n2) No");
