@@ -107,6 +107,7 @@ void askConfiguration()
     if ( typeSMU == 1)
     {
       Serial.println("You have choosen: Voltage sweep");
+      operatingMode = 1;
     }
     if ( typeSMU == 0)
     {
@@ -118,6 +119,7 @@ void askConfiguration()
   {
     strcat(confStr1, "0");
     Serial.println("You have choosen: Generate a signal in the srewdiver terminal");
+    operatingMode = 2;
     Serial.println("-------------------------------------------");
     // S2 of the multiplexer2
     Serial.println("Which kind of signal would you like to generate?");

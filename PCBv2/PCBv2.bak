@@ -1721,4 +1721,9 @@ F 3 "" H 4250 1800 50  0001 C CNN
 $EndComp
 Text Label 4050 1800 2    39   ~ 0
 PIN9
+Wire Wire Line
+	2550 5300 3150 5300
+Wire Wire Line
+	3150 5300 3150 5200
+Connection ~ 3150 5200
 $EndSCHEMATC

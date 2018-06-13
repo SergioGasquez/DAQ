@@ -18,6 +18,7 @@
 #define multi_E3_ADD 12
 #define multi_E4_ADD 13
 #define typeSMU_ADD 14
+#define operatingMode_ADD 15
 
 
 
@@ -43,6 +44,8 @@ void readConfigEEPROM()
   multi_E3 = EEPROM.read(multi_E3_ADD);
   multi_E4 = EEPROM.read(multi_E4_ADD);
   typeSMU = EEPROM.read(typeSMU_ADD);
+  operatingMode = EEPROM.read(operatingMode_ADD);
+
 
 #if DEBUGGING
   Serial.println("Read configuration: ");
@@ -59,6 +62,7 @@ void readConfigEEPROM()
   Serial.print("multi_E3: "); Serial.println(multi_E3);
   Serial.print("multi_E4: "); Serial.println(multi_E4);
   Serial.print("typeSMU: "); Serial.println(typeSMU);
+  Serial.print("operatingMode: "); Serial.println(operatingMode);
 
 #endif // DEBUGGING 
 }
@@ -86,6 +90,8 @@ void saveConfigEEPROM()
   EEPROM.write(multi_E3_ADD, multi_E3);
   EEPROM.write(multi_E4_ADD, multi_E4);
   EEPROM.write(typeSMU_ADD, typeSMU);
+  EEPROM.write(operatingMode_ADD, operatingMode);
+
 #if DEBUGGING
   Serial.println("Configuration has been saved in the EEPROM");
 #endif // DEBUGGING

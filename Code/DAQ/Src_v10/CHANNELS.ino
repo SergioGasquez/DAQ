@@ -222,6 +222,7 @@ void generateWaveform (int type)
 #endif // DEBUGGING
     for (i = 0; i < 4096; i++)
     {
+      ResetWTDG();
       dac.setVoltage(i, false);
     }
   }
@@ -232,6 +233,7 @@ void generateWaveform (int type)
 #endif // DEBUGGING
     for (i = 0; i < 512; i++)
     {
+      ResetWTDG();
       dac.setVoltage(pgm_read_word(&(DACLookup_FullSine_9Bit[i])), false);
     }
   }

@@ -17,7 +17,7 @@
 #define MULTIPLEXER
 #define MULTIPLEXER2
 #define MEM_EEPROM
-//#define COMGPRS
+#define COMGPRS
 #define DEBUGGING true
 
 //-------------- TIMERS --------------//
@@ -145,6 +145,8 @@ boolean multi_E7 = true;
 boolean multi_E8 = true;
 boolean multi_E3 = true;
 boolean multi_E4 = true;
+byte operatingMode = 0;
+
 
 // Channels values
 int valSMU = 0;
@@ -298,7 +300,7 @@ void setup()
 
 void loop()
 {
-  if (!typeSMU)
+  if (operatingMode == 0)
   {
     ResetWTDG();
     cpuSleep();
@@ -349,12 +351,13 @@ void loop()
     }
 #endif //microSD
   }
-  if(typeSMU)
+  if (operatingMode == 1)     // Voltage Sweep
   {
     Serial.println("Voltage Sweep");
     int counter;
     for (counter = 0; counter < 20; counter++)
     {
+      ResetWTDG();
 #if DEBUGGING
       Serial.print("dacVal: "); Serial.println(dacVal);
 #endif //DEBUGGIN
@@ -377,17 +380,19 @@ void loop()
       saveToSD();
     }
   }
-  if(!smu)
+
+  if (operatingMode == 2)       // Generate Wave form
   {
-    if(typeSignal)
+    if (typeSignal)
     {
       generateWaveform(0);
     }
-    if(!typeSignal)
+    if (!typeSignal)
     {
       generateWaveform(1);
     }
   }
+
 }
 
 
