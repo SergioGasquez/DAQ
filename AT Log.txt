@@ -1,70 +1,0 @@
-
-AT
-OK
-
-AT+CGATT?
-ERROR
-
-AT+CGATT:1
-ERROR
-
-AT+CSTT="internetmas","happymovil"," "
-ERROR
-
-AT+CIFSR
-ERROR
-
-AT+CFUN=1	
-ERROR
-
-AT+CFUN?
-+CFUN: 1
-
-OK
-
-AT+CPIN?
-+CPIN: SIM PIN
-
-OK
-
-AT+CPIN=0439
-OK
-
-+CPIN: READY
-
-
-Call Ready
-
-
-SMS Ready
-
-AT+CSTT="internet"," "," " 
-ERROR
-
-AT+CSTT?
-ERROR
-
-AT+CSTT="internetmas","happymovil",""
-ERROR
-
-AT+CSTT="internettph","Movidata"," "   
-ERROR
-
-AT+CSTT="internettph","Movidata",""      
-ERROR
-
-AT+CIICR
-ERROR
-
-AT+CIICR?
-ERROR
-
-AT+CSTT=?  
-ERROR
-
-AT+CSTT?
-ERROR
-
-AT+CSTT=?
-ERROR
-

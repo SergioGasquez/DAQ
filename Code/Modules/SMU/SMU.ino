@@ -34,10 +34,9 @@ void setup(void) {
 
   ads.begin();    // Initalice the adc
 
-  pinMode(multiplexer2Pin, OUTPUT);
-  digitalWrite(multiplexer2Pin, LOW);
-  dacVal = 1500;
-  dac.setVoltage(dacVal, false);
+  //pinMode(multiplexer2Pin, OUTPUT);
+  //digitalWrite(multiplexer2Pin, LOW);
+
 }
 
 
@@ -67,22 +66,26 @@ void loop(void) {
   //    valADC_A0 = readADC(0);
   //    Serial.print(" \t ");Serial.println(valADC_A0);
   //  }
-  valADC_A0 = readADC(0);
+  valADC_A0 = readADC(2);
+  //voltage = valADC_A0 * 0.1875;
+
   Serial.println(valADC_A0);
-  delay(1000);
+  //Serial.print("\t temp: "); Serial.println(voltage/10);
+
+  delay(100);
 
 
-  //dacVal = 1200;
-  //  for (counter = 0; counter < 16; counter++)  // Ramp       [-5,0] V
-  //  {
-  //    Serial.print(counter);
-  //    dacVal += 45;
-  //    Serial.print(" \tDAC: "); Serial.print(dacVal);
-  //    dac.setVoltage(dacVal, false);             // We set the voltage at the counter valuex
-  //    delay(500);
-  //    valADC_A0 = readADC(0);
-  //    voltage = valADC_A0 * 0.1875 / 1000;
-  //    Serial.print("\t voltage: "); Serial.println(voltage);
-  //
-  //  }
+  dacVal = 1650;
+    for (counter = 0; counter < 25; counter++)  // Ramp       [-5,0] V
+    {
+      Serial.print(counter);
+      dacVal += 2;
+      Serial.print(" \tDAC: "); Serial.print(dacVal);
+      dac.setVoltage(dacVal, false);             // We set the voltage at the counter valuex
+      delay(500);
+      valADC_A0 = readADC(0);
+      voltage = valADC_A0 * 0.1875 / 1000;
+      Serial.print("\t voltage: "); Serial.println(voltage);
+  
+    }
 }

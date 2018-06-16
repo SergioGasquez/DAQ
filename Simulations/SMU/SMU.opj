@@ -28,6 +28,21 @@
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (MPSSessionName "sergi")
   (PartMRUSelector
+    (PMK35EP
+      (FullPartName "PMK35EP.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES (X86)\TOOLS\CAPTURE\LIBRARY\PSPICE\NXP_MOSFETS.OLB")
+      (DeviceIndex "0"))
+    (PMBF170/PLP
+      (FullPartName "PMBF170/PLP.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES (X86)\TOOLS\CAPTURE\LIBRARY\PSPICE\PHIL_FET.OLB")
+      (DeviceIndex "0"))
+    (MZ407
+      (FullPartName "MZ407.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES (X86)\TOOLS\CAPTURE\LIBRARY\PSPICE\JDIODE.OLB")
+      (DeviceIndex "0"))
     (0
       (LibraryName "C:\PROGRAM FILES (X86)\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
       (DeviceIndex "0"))
@@ -60,7 +75,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -31 52 1688 52 511")
-        (Scroll "119 0")
+        (Scroll "119 220")
         (Zoom "200")
         (Occurrence "/"))
       (Path "C:\USERS\SERGI\DOCUMENTS\GITHUB\DAQ\SIMULATIONS\SMU\SMU.DSN")
